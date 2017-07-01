@@ -7,21 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170D9CB51EFBA0EB00A4E7A0 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170D9CB41EFBA0EB00A4E7A0 /* MenuBar.swift */; };
+		170D9CB71EFBAE4300A4E7A0 /* Errands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170D9CB61EFBAE4300A4E7A0 /* Errands.swift */; };
+		170D9CB91EFBBD8C00A4E7A0 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170D9CB81EFBBD8C00A4E7A0 /* HomePageTableViewCell.swift */; };
+		1769E6961EF13DF1002A484D /* SearchBarInNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769E6951EF13DF1002A484D /* SearchBarInNav.swift */; };
+		1769E6981EF14238002A484D /* HomePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769E6971EF14238002A484D /* HomePageTableViewController.swift */; };
+		17CB15871EFBD6FA00C4128D /* AcceptedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB15821EFBD6FA00C4128D /* AcceptedTableViewCell.swift */; };
+		17CB15881EFBD6FA00C4128D /* AcceptedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB15831EFBD6FA00C4128D /* AcceptedTableViewController.swift */; };
+		17CB15891EFBD6FA00C4128D /* JobListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB15841EFBD6FA00C4128D /* JobListTableViewCell.swift */; };
+		17CB158A1EFBD6FA00C4128D /* JobListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB15851EFBD6FA00C4128D /* JobListTableViewController.swift */; };
+		17CB158B1EFBD6FA00C4128D /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB15861EFBD6FA00C4128D /* SettingTableViewController.swift */; };
+		21272DC51F060FAB005A5980 /* AnimationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21272DC41F060FAB005A5980 /* AnimationCollectionViewController.swift */; };
+		21464EDC1F02A49C00C4FD7A /* globalVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21464EDB1F02A49C00C4FD7A /* globalVar.swift */; };
+		21464EDE1F02A6CC00C4FD7A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21464EDD1F02A6CC00C4FD7A /* HomeCollectionViewCell.swift */; };
+		21D192861F02861900F61D57 /* Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D192851F02861900F61D57 /* Extension .swift */; };
+		21D192881F029D3800F61D57 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */; };
+		21FBB0BA1F05A15C009F9D74 /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FBB0B91F05A15C009F9D74 /* TagsCollectionViewCell.swift */; };
+		21FBB0BC1F05A197009F9D74 /* TagsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FBB0BB1F05A197009F9D74 /* TagsCollectionViewController.swift */; };
+		2736D0021EFF74520024C99C /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2736D0011EFF74520024C99C /* AddPostTableViewController.swift */; };
+		572B0AA41F02083900FDCB4A /* HomePageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */; };
+		572B0AA61F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */; };
+		ACB86D00B5240D8CD68F382B /* Pods_Errandzon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDEBABA9860AA9FDDA16126C /* Pods_Errandzon.framework */; };
 		B78310E01EE52385000AF2CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78310DF1EE52385000AF2CF /* AppDelegate.swift */; };
-		B78310E21EE52385000AF2CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78310E11EE52385000AF2CF /* ViewController.swift */; };
 		B78310E51EE52385000AF2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78310E31EE52385000AF2CF /* Main.storyboard */; };
 		B78310E71EE52385000AF2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78310E61EE52385000AF2CF /* Assets.xcassets */; };
 		B78310EA1EE52385000AF2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78310E81EE52385000AF2CF /* LaunchScreen.storyboard */; };
+		B78310F21EE525CF000AF2CF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78310F11EE525CF000AF2CF /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		170D9CB41EFBA0EB00A4E7A0 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		170D9CB61EFBAE4300A4E7A0 /* Errands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errands.swift; sourceTree = "<group>"; };
+		170D9CB81EFBBD8C00A4E7A0 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
+		1769E6951EF13DF1002A484D /* SearchBarInNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarInNav.swift; sourceTree = "<group>"; };
+		1769E6971EF14238002A484D /* HomePageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTableViewController.swift; sourceTree = "<group>"; };
+		17CB15821EFBD6FA00C4128D /* AcceptedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedTableViewCell.swift; sourceTree = "<group>"; };
+		17CB15831EFBD6FA00C4128D /* AcceptedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedTableViewController.swift; sourceTree = "<group>"; };
+		17CB15841EFBD6FA00C4128D /* JobListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobListTableViewCell.swift; sourceTree = "<group>"; };
+		17CB15851EFBD6FA00C4128D /* JobListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobListTableViewController.swift; sourceTree = "<group>"; };
+		17CB15861EFBD6FA00C4128D /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		21272DC41F060FAB005A5980 /* AnimationCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationCollectionViewController.swift; sourceTree = "<group>"; };
+		21464EDB1F02A49C00C4FD7A /* globalVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globalVar.swift; sourceTree = "<group>"; };
+		21464EDD1F02A6CC00C4FD7A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		21D192851F02861900F61D57 /* Extension .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension .swift"; sourceTree = "<group>"; };
+		21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		21FBB0B91F05A15C009F9D74 /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
+		21FBB0BB1F05A197009F9D74 /* TagsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewController.swift; sourceTree = "<group>"; };
+		2736D0011EFF74520024C99C /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
+		572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePageDetailViewController.swift; path = ../HomePageDetailViewController.swift; sourceTree = "<group>"; };
+		572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageDetailTableViewCell.swift; sourceTree = "<group>"; };
+		6B05E1425E151C0CEF53E273 /* Pods-Errandzon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Errandzon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Errandzon/Pods-Errandzon.release.xcconfig"; sourceTree = "<group>"; };
+		896A4E2DE1476A9F551C0679 /* Pods-Errandzon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Errandzon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Errandzon/Pods-Errandzon.debug.xcconfig"; sourceTree = "<group>"; };
 		B78310DC1EE52385000AF2CF /* Errandzon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Errandzon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78310DF1EE52385000AF2CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B78310E11EE52385000AF2CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B78310E41EE52385000AF2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B78310E61EE52385000AF2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B78310E91EE52385000AF2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B78310EB1EE52385000AF2CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B78310F11EE525CF000AF2CF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		FDEBABA9860AA9FDDA16126C /* Pods_Errandzon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Errandzon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +73,67 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB86D00B5240D8CD68F382B /* Pods_Errandzon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21D192821F0285AF00F61D57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21FBB0B91F05A15C009F9D74 /* TagsCollectionViewCell.swift */,
+				17CB15841EFBD6FA00C4128D /* JobListTableViewCell.swift */,
+				572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */,
+				170D9CB81EFBBD8C00A4E7A0 /* HomePageTableViewCell.swift */,
+				17CB15821EFBD6FA00C4128D /* AcceptedTableViewCell.swift */,
+				21464EDD1F02A6CC00C4FD7A /* HomeCollectionViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		21D192831F0285CB00F61D57 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				21D192851F02861900F61D57 /* Extension .swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		21D192841F0285EB00F61D57 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B78310F11EE525CF000AF2CF /* LoginController.swift */,
+				2736D0011EFF74520024C99C /* AddPostTableViewController.swift */,
+				17CB15851EFBD6FA00C4128D /* JobListTableViewController.swift */,
+				17CB15831EFBD6FA00C4128D /* AcceptedTableViewController.swift */,
+				572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */,
+				1769E6971EF14238002A484D /* HomePageTableViewController.swift */,
+				17CB15861EFBD6FA00C4128D /* SettingTableViewController.swift */,
+				21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */,
+				21FBB0BB1F05A197009F9D74 /* TagsCollectionViewController.swift */,
+				21272DC41F060FAB005A5980 /* AnimationCollectionViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		506D377F5C2B23C734C42B03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				896A4E2DE1476A9F551C0679 /* Pods-Errandzon.debug.xcconfig */,
+				6B05E1425E151C0CEF53E273 /* Pods-Errandzon.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B78310D31EE52385000AF2CF = {
 			isa = PBXGroup;
 			children = (
 				B78310DE1EE52385000AF2CF /* Errandzon */,
 				B78310DD1EE52385000AF2CF /* Products */,
+				506D377F5C2B23C734C42B03 /* Pods */,
+				DD5A74D7F97C1474DD8234FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +148,28 @@
 		B78310DE1EE52385000AF2CF /* Errandzon */ = {
 			isa = PBXGroup;
 			children = (
+				21D192841F0285EB00F61D57 /* Controllers */,
+				21D192831F0285CB00F61D57 /* Extensions */,
+				21D192821F0285AF00F61D57 /* Views */,
 				B78310DF1EE52385000AF2CF /* AppDelegate.swift */,
-				B78310E11EE52385000AF2CF /* ViewController.swift */,
 				B78310E31EE52385000AF2CF /* Main.storyboard */,
 				B78310E61EE52385000AF2CF /* Assets.xcassets */,
 				B78310E81EE52385000AF2CF /* LaunchScreen.storyboard */,
 				B78310EB1EE52385000AF2CF /* Info.plist */,
+				1769E6951EF13DF1002A484D /* SearchBarInNav.swift */,
+				170D9CB41EFBA0EB00A4E7A0 /* MenuBar.swift */,
+				170D9CB61EFBAE4300A4E7A0 /* Errands.swift */,
+				21464EDB1F02A49C00C4FD7A /* globalVar.swift */,
 			);
 			path = Errandzon;
+			sourceTree = "<group>";
+		};
+		DD5A74D7F97C1474DD8234FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDEBABA9860AA9FDDA16126C /* Pods_Errandzon.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +179,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B78310EE1EE52385000AF2CF /* Build configuration list for PBXNativeTarget "Errandzon" */;
 			buildPhases = (
+				7EAB3FB5697D5C89E4FC50EF /* [CP] Check Pods Manifest.lock */,
 				B78310D81EE52385000AF2CF /* Sources */,
 				B78310D91EE52385000AF2CF /* Frameworks */,
 				B78310DA1EE52385000AF2CF /* Resources */,
+				61036346774AC2CC9779D3B0 /* [CP] Embed Pods Frameworks */,
+				3BAC107D9FB56BA0AB49A528 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +242,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3BAC107D9FB56BA0AB49A528 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Errandzon/Pods-Errandzon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61036346774AC2CC9779D3B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Errandzon/Pods-Errandzon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EAB3FB5697D5C89E4FC50EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B78310D81EE52385000AF2CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B78310E21EE52385000AF2CF /* ViewController.swift in Sources */,
+				2736D0021EFF74520024C99C /* AddPostTableViewController.swift in Sources */,
+				21FBB0BA1F05A15C009F9D74 /* TagsCollectionViewCell.swift in Sources */,
+				17CB15891EFBD6FA00C4128D /* JobListTableViewCell.swift in Sources */,
+				B78310F21EE525CF000AF2CF /* LoginController.swift in Sources */,
+				572B0AA41F02083900FDCB4A /* HomePageDetailViewController.swift in Sources */,
+				17CB158A1EFBD6FA00C4128D /* JobListTableViewController.swift in Sources */,
+				21FBB0BC1F05A197009F9D74 /* TagsCollectionViewController.swift in Sources */,
+				170D9CB91EFBBD8C00A4E7A0 /* HomePageTableViewCell.swift in Sources */,
+				17CB15881EFBD6FA00C4128D /* AcceptedTableViewController.swift in Sources */,
+				21D192881F029D3800F61D57 /* HomeCollectionViewController.swift in Sources */,
+				21464EDC1F02A49C00C4FD7A /* globalVar.swift in Sources */,
 				B78310E01EE52385000AF2CF /* AppDelegate.swift in Sources */,
+				21464EDE1F02A6CC00C4FD7A /* HomeCollectionViewCell.swift in Sources */,
+				21272DC51F060FAB005A5980 /* AnimationCollectionViewController.swift in Sources */,
+				21D192861F02861900F61D57 /* Extension .swift in Sources */,
+				170D9CB51EFBA0EB00A4E7A0 /* MenuBar.swift in Sources */,
+				1769E6961EF13DF1002A484D /* SearchBarInNav.swift in Sources */,
+				170D9CB71EFBAE4300A4E7A0 /* Errands.swift in Sources */,
+				17CB158B1EFBD6FA00C4128D /* SettingTableViewController.swift in Sources */,
+				572B0AA61F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift in Sources */,
+				17CB15871EFBD6FA00C4128D /* AcceptedTableViewCell.swift in Sources */,
+				1769E6981EF14238002A484D /* HomePageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +439,7 @@
 		};
 		B78310EF1EE52385000AF2CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 896A4E2DE1476A9F551C0679 /* Pods-Errandzon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Errandzon/Info.plist;
@@ -272,6 +452,7 @@
 		};
 		B78310F01EE52385000AF2CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B05E1425E151C0CEF53E273 /* Pods-Errandzon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Errandzon/Info.plist;
@@ -301,6 +482,7 @@
 				B78310F01EE52385000AF2CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

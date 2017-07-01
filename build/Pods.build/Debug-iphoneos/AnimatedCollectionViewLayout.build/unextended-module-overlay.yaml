@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/d0325088Lts/Downloads/Errandzon 2/build/Debug-iphoneos/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/d0325088Lts/Downloads/Errandzon 2/build/Pods.build/Debug-iphoneos/AnimatedCollectionViewLayout.build/unextended-module.modulemap',
+    }]
+  }]
+}
