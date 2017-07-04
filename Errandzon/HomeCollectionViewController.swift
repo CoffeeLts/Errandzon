@@ -33,8 +33,8 @@ class HomeCollectionViewController: UICollectionViewController {
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         
         collectionView?.contentInset = UIEdgeInsets(top: insetX, left: insetX, bottom: insetY, right: insetX)
-        blackMaskingvView.layer.borderColor = UIColor.white as! CGColor
-        blackMaskingvView.layer.borderWidth = 2.0
+//        blackMaskingvView.layer.borderColor = UIColor.white as! CGColor
+//        blackMaskingvView.layer.borderWidth = 2.0
 //        collectionView?.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "homePageCell")
 
     }
@@ -67,7 +67,7 @@ class HomeCollectionViewController: UICollectionViewController {
             print("cell is null")
         }
         
-        cell.publisherLabel.text = errands[indexPath.row].publisher
+ //       cell.publisherLabel.text = errands[indexPath.row].publisher
  //       cell.titleLabel.text = errands[indexPath.row].title
 //        cell.details.text = errands[indexPath.row].details
 //        cell.rewards.text = errands[indexPath.row].rewards

@@ -27,6 +27,7 @@
 		2736D0021EFF74520024C99C /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2736D0011EFF74520024C99C /* AddPostTableViewController.swift */; };
 		572B0AA41F02083900FDCB4A /* HomePageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */; };
 		572B0AA61F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */; };
+		57E9DC581F0B717600D63DFC /* JobList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9DC571F0B717600D63DFC /* JobList.swift */; };
 		ACB86D00B5240D8CD68F382B /* Pods_Errandzon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDEBABA9860AA9FDDA16126C /* Pods_Errandzon.framework */; };
 		B78310E01EE52385000AF2CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78310DF1EE52385000AF2CF /* AppDelegate.swift */; };
 		B78310E51EE52385000AF2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78310E31EE52385000AF2CF /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		2736D0011EFF74520024C99C /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
 		572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePageDetailViewController.swift; path = ../HomePageDetailViewController.swift; sourceTree = "<group>"; };
 		572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageDetailTableViewCell.swift; sourceTree = "<group>"; };
+		57E9DC571F0B717600D63DFC /* JobList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobList.swift; sourceTree = "<group>"; };
 		6B05E1425E151C0CEF53E273 /* Pods-Errandzon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Errandzon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Errandzon/Pods-Errandzon.release.xcconfig"; sourceTree = "<group>"; };
 		896A4E2DE1476A9F551C0679 /* Pods-Errandzon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Errandzon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Errandzon/Pods-Errandzon.debug.xcconfig"; sourceTree = "<group>"; };
 		B78310DC1EE52385000AF2CF /* Errandzon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Errandzon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 				B78310F11EE525CF000AF2CF /* LoginController.swift */,
 				2736D0011EFF74520024C99C /* AddPostTableViewController.swift */,
 				17CB15851EFBD6FA00C4128D /* JobListTableViewController.swift */,
+				57E9DC571F0B717600D63DFC /* JobList.swift */,
 				17CB15831EFBD6FA00C4128D /* AcceptedTableViewController.swift */,
 				572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */,
 				1769E6971EF14238002A484D /* HomePageTableViewController.swift */,
@@ -297,6 +300,7 @@
 			files = (
 				2736D0021EFF74520024C99C /* AddPostTableViewController.swift in Sources */,
 				21FBB0BA1F05A15C009F9D74 /* TagsCollectionViewCell.swift in Sources */,
+				57E9DC581F0B717600D63DFC /* JobList.swift in Sources */,
 				17CB15891EFBD6FA00C4128D /* JobListTableViewCell.swift in Sources */,
 				B78310F21EE525CF000AF2CF /* LoginController.swift in Sources */,
 				572B0AA41F02083900FDCB4A /* HomePageDetailViewController.swift in Sources */,

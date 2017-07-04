@@ -22,7 +22,7 @@ class AcceptedTableViewController: UITableViewController {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AcceptedTableViewCell
         // Configure the cell...
-   //     cell.AcceptedtitleLabel.text = AcceptedJobTitles[indexPath.row]
+        //cell.AcceptedtitleLabel.text = AcceptedJobTitles[indexPath.row]
         
         //cell.publisher.text = myAcceptErrands[indexPath.row].publisher
         cell.title.text = myAcceptErrands[indexPath.row].title
@@ -32,13 +32,10 @@ class AcceptedTableViewController: UITableViewController {
         return cell
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
+
     func setGradientBackground() {
-        let colorTop =  UIColor(red: 24.0/255.0, green: 237.0/255.0, blue: 234.0/255.0, alpha: 100.0).cgColor
-        let colorBottom = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 100.0).cgColor
+        let colorTop =  UIColor.black.cgColor
+        let colorBottom = UIColor.black.cgColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.startPoint = CGPoint(x:1.0,y: 1.0)
@@ -50,9 +47,13 @@ class AcceptedTableViewController: UITableViewController {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       // setGradientBackground()
+        setGradientBackground()
         
 
         // Uncomment the following line to preserve selection between presentations

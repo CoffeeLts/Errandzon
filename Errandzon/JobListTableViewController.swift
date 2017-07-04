@@ -11,7 +11,7 @@ import UIKit
 class JobListTableViewController: UITableViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    
+
     @IBAction func unwindToHomeScreen3(segue:UIStoryboardSegue) {
     }
     
@@ -24,6 +24,9 @@ class JobListTableViewController: UITableViewController {
             let myPostList = appDelegate.myPostList
             return myPostList.count
     }
+    
+
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         DispatchQueue.main.async{
             self.tableView.reloadData()
@@ -41,9 +44,10 @@ class JobListTableViewController: UITableViewController {
         
     }
     
+    
     func setGradientBackground() {
-        let colorTop =  UIColor(red: 24.0/255.0, green: 237.0/255.0, blue: 234.0/255.0, alpha: 100.0).cgColor
-        let colorBottom = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 100.0).cgColor
+        let colorTop =  UIColor.black.cgColor
+        let colorBottom = UIColor.black.cgColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.startPoint = CGPoint(x:1.0,y: 1.0)
@@ -64,7 +68,7 @@ class JobListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // setGradientBackground()
+        setGradientBackground()
       
 
         // Uncomment the following line to preserve selection between presentations
@@ -83,7 +87,6 @@ class JobListTableViewController: UITableViewController {
 
 
 
-    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
