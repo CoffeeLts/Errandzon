@@ -14,11 +14,12 @@ class TagsCollectionViewController: UICollectionViewController {
     let cellScaling: CGFloat = 0.8
     var selectedTags = [String]()
     //let temp:SettingsViewController?
-    
+    var Server:ServerManage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        Server = appDelegate.Server
         self.collectionView?.allowsMultipleSelection = true
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -167,7 +168,10 @@ class TagsCollectionViewController: UICollectionViewController {
         for items in user_tags{
             print(items)
         }
-        
+        if Server.is_new {
+            self.performSegue(withIdentifier: "init", sender: nil)
+            return
+        }
         self.performSegue(withIdentifier: "unwindToSettings", sender: self)
     }
     

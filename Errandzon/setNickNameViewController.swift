@@ -8,11 +8,12 @@
 
 import UIKit
 
-class setNickNameViewController: UIViewController {
+class setNickNameViewController: UIViewController,UITextFieldDelegate {
     var Server:ServerManage!
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.delegate = self
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         Server = appDelegate.Server
     }
@@ -25,6 +26,7 @@ class setNickNameViewController: UIViewController {
         print(segue.identifier!)
     }
     @IBAction func nextButton(){
+        view.endEditing(true)
         if let text = textField.text {
             Server.setNickName(text, callback: self.done)
             
@@ -37,6 +39,11 @@ class setNickNameViewController: UIViewController {
     }
     func letsGo(){
         performSegue(withIdentifier: "nicknameGoTag", sender: nil)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        self.nextButton()
+        return true
     }
     /*
     // MARK: - Navigation

@@ -327,7 +327,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Wxl-ah-JJK" kind="presentation" id="j7F-Ll-NH7"/>
+                        <segue destination="Wxl-ah-JJK" kind="presentation" identifier="init" id="j7F-Ll-NH7"/>
                         <segue destination="Vbu-qd-YgF" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettingsWithSegue:" id="lJ5-Kb-WNe"/>
                     </connections>
                 </collectionViewController>
