@@ -24,8 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
 
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-
+        
         Server = ServerManage()
+        
 //        [[UINavigationBar appearance] setBarTintColor:myColor];
 //        [[UINavigationBar appearance] setTranslucent:NO];
         
