@@ -28,12 +28,12 @@ class ChatRoom: UIViewController {
                     Chat(user: 0, msg: "a"),
                     Chat(user: 1, msg: "232"),
                     Chat(user: 1, msg: "5345"),
-                    Chat(user: 0, msg: "a"),
-                    Chat(user: 0, msg: "s"),
-                    Chat(user: 1, msg: "Hi"),
-                    Chat(user: 0, msg: "Hi"),
-                    Chat(user: 1, msg: "Hi"),
-                    Chat(user: 0, msg: "Hi"),
+                    Chat(user: 0, msg: "aasd"),
+                    Chat(user: 0, msg: "sasd"),
+                    Chat(user: 1, msg: "123123"),
+                    Chat(user: 0, msg: "asdasd"),
+                    Chat(user: 1, msg: "1231"),
+                    Chat(user: 0, msg: "asd"),
                     ]
     
     
