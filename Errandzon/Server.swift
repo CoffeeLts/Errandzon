@@ -50,7 +50,7 @@ class ServerManage {
                 
                 if let status = json[ServerResponse.status.rawValue] as? String {
                     callback(ServerState(rawValue: status)!)
-//                    self.setNickName("qwe", callback: self.test)
+                    self.setNickName("qwe", callback: self.test)
                 }
                 
             }
@@ -62,7 +62,8 @@ class ServerManage {
         print("test")
     }
     func setNickName(_ nickname:String,callback:@escaping((_ state:ServerState) -> Void) ) {
-        let data = "nickname=\(nickname)&api_token=\(token)"
+        let data = "nickname=\(nickname)&api_token=\(token!)"
+        print(data)
         let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/setNickName")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
