@@ -156,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				2147A0D01F12EF5A003096CF /* FacebookLogInViewController.swift */,
-				2736D0011EFF74520024C99C /* AddPostTableViewController.swift */,
 				17CB15851EFBD6FA00C4128D /* JobListTableViewController.swift */,
 				2ACC2CCE1F0EE53600A50193 /* JobListDetailTableViewController.swift */,
 				17CB15831EFBD6FA00C4128D /* AcceptedTableViewController.swift */,
@@ -164,7 +163,6 @@
 				572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */,
 				17CB15861EFBD6FA00C4128D /* SettingTableViewController.swift */,
 				21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */,
-				21FBB0BB1F05A197009F9D74 /* TagsCollectionViewController.swift */,
 				21272DC41F060FAB005A5980 /* AnimationCollectionViewController.swift */,
 				170D9CB41EFBA0EB00A4E7A0 /* MenuBar.swift */,
 				21F9DBBF1F12D87E003B6922 /* SettingsViewController.swift */,
@@ -174,6 +172,8 @@
 				2147A0D41F137630003096CF /* AcceptPage.swift */,
 				2147A0DE1F1397B1003096CF /* JobContactList.swift */,
 				2147A0E01F13AE1F003096CF /* CustomTabBar.swift */,
+				2736D0011EFF74520024C99C /* AddPostTableViewController.swift */,
+				21FBB0BB1F05A197009F9D74 /* TagsCollectionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

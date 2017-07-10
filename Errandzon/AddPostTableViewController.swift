@@ -28,10 +28,6 @@ class AddPostTableViewController: UITableViewController {
         self.textViewSetting(textField: validTimeTextField)
         self.textViewSetting(textField: postRewardTextField)
         self.textViewSetting(textField: postDetailsTextField)
-     
-        
-        
-        
         
     }
     func textViewSetting(textField:UITextField){

@@ -10,6 +10,12 @@ import UIKit
 
 class SettingsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout  {
     
+    @IBAction func unwindToSettings(segue:UIStoryboardSegue) {
+        tagsBox.reloadData()
+        for item in user_tags {
+            print(item)
+        }
+    }
     
     @IBOutlet var tagsBox: UICollectionView!
     let cellScaling: CGFloat = 0.6

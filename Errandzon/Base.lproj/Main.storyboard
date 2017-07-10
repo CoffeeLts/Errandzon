@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wxl-ah-JJK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YLc-n5-YJg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -287,7 +287,7 @@
         <scene sceneID="b2t-F3-qD8">
             <objects>
                 <collectionViewController id="YLc-n5-YJg" userLabel="Tags" customClass="TagsCollectionViewController" customModule="Errandzon" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6t6-Rn-Y9o">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="6t6-Rn-Y9o">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -328,6 +328,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Wxl-ah-JJK" kind="presentation" id="j7F-Ll-NH7"/>
+                        <segue destination="Vbu-qd-YgF" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettingsWithSegue:" id="lJ5-Kb-WNe"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBf-ec-wzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1029,7 +1030,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Z9e-kF-sNo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8c3-Ft-Dbx">
+                        <barButtonItem key="rightBarButtonItem" title="New Tags" id="8c3-Ft-Dbx">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="YLc-n5-YJg" kind="show" id="u92-Cc-yDS"/>
@@ -1822,8 +1823,8 @@
         <image name="wooden_texture" width="850" height="850"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u92-Cc-yDS"/>
-        <segue reference="mgU-7E-FcV"/>
         <segue reference="PrL-wT-j8k"/>
+        <segue reference="mgU-7E-FcV"/>
+        <segue reference="u92-Cc-yDS"/>
     </inferredMetricsTieBreakers>
 </document>

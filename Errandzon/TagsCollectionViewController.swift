@@ -13,7 +13,7 @@ class TagsCollectionViewController: UICollectionViewController {
     
     let cellScaling: CGFloat = 0.8
     var selectedTags = [String]()
-    
+    //let temp:SettingsViewController?
     
     
     override func viewDidLoad() {
@@ -144,13 +144,32 @@ class TagsCollectionViewController: UICollectionViewController {
     
     
     @IBAction func saveTags(_ sender: Any) {
-        user_tags.append(contentsOf: selectedTags)
         
-        for item in user_tags {
-            print(item)
-        }
+        showAlertButton(sender)
+       
+    }
+    func showAlertButton(_ sender: Any) {
+        
+        // create the alert
+        let alert = UIAlertController(title: "New Tags", message: "Add new Tags?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: insertNewTags))
+        
+        alert.addAction(UIAlertAction(title: "CANCEL", style: UIAlertActionStyle.default, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
     
+    func insertNewTags(alert: UIAlertAction!) {
+        user_tags.append(contentsOf: selectedTags)
+        for items in user_tags{
+            print(items)
+        }
+        
+        self.performSegue(withIdentifier: "unwindToSettings", sender: self)
+    }
     
 
 

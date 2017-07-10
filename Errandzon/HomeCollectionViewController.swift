@@ -23,10 +23,6 @@ class HomeCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         navigationItem.title = "Errandzon"
         
-        
-        
-        
-    //    setupMenuBar()
         setupCollectionView()
         
 
