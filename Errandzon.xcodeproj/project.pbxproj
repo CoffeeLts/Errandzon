@@ -44,6 +44,7 @@
 		2ACC2CCB1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CCA1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift */; };
 		2ACC2CCD1F0EE53000A50193 /* JobListDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CCC1F0EE53000A50193 /* JobListDetailTableViewCell.swift */; };
 		2ACC2CCF1F0EE53600A50193 /* JobListDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CCE1F0EE53600A50193 /* JobListDetailTableViewController.swift */; };
+		42A0EE551F13CBE30059FA8A /* setNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0EE541F13CBE30059FA8A /* setNickNameViewController.swift */; };
 		42A0FDDD1F137A0C00D6D41D /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0FDDC1F137A0C00D6D41D /* Server.swift */; };
 		572B0AA41F02083900FDCB4A /* HomePageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */; };
 		572B0AA61F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */; };
@@ -94,6 +95,7 @@
 		2ACC2CCA1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedDetailTableViewCell.swift; sourceTree = "<group>"; };
 		2ACC2CCC1F0EE53000A50193 /* JobListDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobListDetailTableViewCell.swift; sourceTree = "<group>"; };
 		2ACC2CCE1F0EE53600A50193 /* JobListDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobListDetailTableViewController.swift; sourceTree = "<group>"; };
+		42A0EE541F13CBE30059FA8A /* setNickNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setNickNameViewController.swift; sourceTree = "<group>"; };
 		42A0FDDC1F137A0C00D6D41D /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePageDetailViewController.swift; path = ../HomePageDetailViewController.swift; sourceTree = "<group>"; };
 		572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		21D192841F0285EB00F61D57 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				42A0EE541F13CBE30059FA8A /* setNickNameViewController.swift */,
 				2147A0D01F12EF5A003096CF /* FacebookLogInViewController.swift */,
 				17CB15851EFBD6FA00C4128D /* JobListTableViewController.swift */,
 				2ACC2CCE1F0EE53600A50193 /* JobListDetailTableViewController.swift */,
@@ -400,6 +403,7 @@
 				21D192861F02861900F61D57 /* Extension .swift in Sources */,
 				21F9DBBE1F12C8DB003B6922 /* AllFeedTableViewController.swift in Sources */,
 				170D9CB51EFBA0EB00A4E7A0 /* MenuBar.swift in Sources */,
+				42A0EE551F13CBE30059FA8A /* setNickNameViewController.swift in Sources */,
 				21222B931F122C110068A59E /* BaseCollectionViewCell.swift in Sources */,
 				1769E6961EF13DF1002A484D /* SearchBarInNav.swift in Sources */,
 				170D9CB71EFBAE4300A4E7A0 /* Errands.swift in Sources */,
