@@ -15,24 +15,13 @@ class CustomTabBar: UITabBarController {
         
 //        
 //        let tabBarController = self.window!.rootViewController as! UITabBarController
-//        let tabBar = tabBarController.tabBar as UITabBar
-        
-        let tabBarItem1 = tabBar.items![0] as UITabBarItem
-        let tabBarItem2 = tabBar.items![1] as UITabBarItem
-        let tabBarItem3 = tabBar.items![2] as UITabBarItem
-        let tabBarItem4 = tabBar.items![3] as UITabBarItem
-        
-        tabBarItem1.selectedImage = UIImage(named: "home")?.withRenderingMode(.alwaysOriginal)
-        tabBarItem2.selectedImage = UIImage(named: "myjob")?.withRenderingMode(.alwaysOriginal)
-        tabBarItem3.selectedImage = UIImage(named: "job")?.withRenderingMode(.alwaysOriginal)
-        tabBarItem4.selectedImage = UIImage(named: "setting")?.withRenderingMode(.alwaysOriginal)
+   //
+
         
 
         
-        
-       
-        
         tabBar.tintColor = UIColor.green
+        tabBarItem.selectedImage = UIImage(named: "home")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         
         // Do any additional setup after loading the view.

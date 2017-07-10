@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Zn-Ww-xSb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wxl-ah-JJK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -287,7 +287,7 @@
         <scene sceneID="b2t-F3-qD8">
             <objects>
                 <collectionViewController id="YLc-n5-YJg" userLabel="Tags" customClass="TagsCollectionViewController" customModule="Errandzon" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="6t6-Rn-Y9o">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6t6-Rn-Y9o">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -359,7 +359,7 @@
         <scene sceneID="CqW-DB-LmM">
             <objects>
                 <navigationController title="HomePageNav" automaticallyAdjustsScrollViewInsets="NO" id="dsp-8W-Ljl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ikA-3w-j6E"/>
+                    <tabBarItem key="tabBarItem" title="home" id="ikA-3w-j6E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="S2m-8V-xa7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -379,7 +379,7 @@
         <scene sceneID="yHD-7S-dWp">
             <objects>
                 <navigationController title="ManagePostList" automaticallyAdjustsScrollViewInsets="NO" id="Kaw-SD-cEB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="p0j-sQ-gI8"/>
+                    <tabBarItem key="tabBarItem" title="My Posts" id="p0j-sQ-gI8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="OIA-8C-v0c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -395,11 +395,11 @@
             </objects>
             <point key="canvasLocation" x="1177" y="214"/>
         </scene>
-        <!--Item 2-->
+        <!--Accepted-->
         <scene sceneID="6rt-kH-P2d">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1NS-PN-0GG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="NtD-yq-iSP"/>
+                    <tabBarItem key="tabBarItem" title="Accepted" id="NtD-yq-iSP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Cgc-yC-Zvl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -415,11 +415,11 @@
             </objects>
             <point key="canvasLocation" x="1177" y="-478"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="hbx-X8-msQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3fR-XG-JPu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hf7-cd-8po"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="hf7-cd-8po"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="s74-Zg-1D0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -846,7 +846,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YC9-zm-QVw">
-                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -865,7 +865,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Oww-1c-h9h">
-                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -880,11 +880,11 @@
                                         <rect key="frame" x="0.0" y="144" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rCH-5z-PQl" id="7Ni-gD-v6F">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oEy-bU-E4t">
-                                                    <rect key="frame" x="16" y="12" width="37" height="20.5"/>
+                                                    <rect key="frame" x="15" y="12" width="37" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
