@@ -8,7 +8,7 @@
 
 import Foundation
 class Server {
-    
+    var token:String!
     
     init() {
         

@@ -28,7 +28,6 @@
 		2147A0CF1F12EEC9003096CF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2147A0CE1F12EEC9003096CF /* FBSDKLoginKit.framework */; };
 		2147A0D11F12EF5A003096CF /* FacebookLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147A0D01F12EF5A003096CF /* FacebookLogInViewController.swift */; };
 		2147A0D31F13752E003096CF /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147A0D21F13752E003096CF /* ChatRoom.swift */; };
-		2147A0D51F137630003096CF /* AcceptPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147A0D41F137630003096CF /* AcceptPage.swift */; };
 		21D192861F02861900F61D57 /* Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D192851F02861900F61D57 /* Extension .swift */; };
 		21D192881F029D3800F61D57 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */; };
 		21F9DBB71F1272AA003B6922 /* AllFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9DBB51F1272AA003B6922 /* AllFeedCell.swift */; };
@@ -276,6 +275,7 @@
 				TargetAttributes = {
 					B78310DB1EE52385000AF2CF = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = ZFEYLX8LPQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -525,7 +525,7 @@
 			baseConfigurationReference = 896A4E2DE1476A9F551C0679 /* Pods-Errandzon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZFEYLX8LPQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -543,7 +543,7 @@
 			baseConfigurationReference = 6B05E1425E151C0CEF53E273 /* Pods-Errandzon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZFEYLX8LPQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
