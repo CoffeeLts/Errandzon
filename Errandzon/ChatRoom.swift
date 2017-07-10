@@ -13,7 +13,7 @@ struct Chat {
     var msg: String!
 }
 
-class ChatRoom: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatRoom: UIViewController {
     
     var chatsLog = [Chat(user: 0, msg: "Hi"),
                     Chat(user: 1, msg: "Hello"),
@@ -59,10 +59,17 @@ class ChatRoom: UIViewController, UITableViewDelegate, UITableViewDataSource {
         chatTableView.dataSource = self
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
+    
     
     
 
+}
+extension ChatRoom: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
+        return cell
+    }
 }
