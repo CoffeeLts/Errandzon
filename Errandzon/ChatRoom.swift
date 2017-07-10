@@ -45,6 +45,7 @@ class ChatRoom: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
 
         // Do any additional setup after loading the view.
     }
@@ -64,12 +65,49 @@ class ChatRoom: UIViewController {
     
 
 }
+
 extension ChatRoom: UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
-        return cell
+ 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chatsLog.count
     }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: ChatRoomCell?
+        //left
+        if(chatsLog[indexPath.row].user == 1){
+            cell = tableView.dequeueReusableCell(withIdentifier: "left", for: indexPath) as? ChatRoomCell
+            print(chatsLog[indexPath.row].msg)
+            cell?.leftLabel.text = chatsLog[indexPath.row].msg
+        }
+        else{ //right
+            cell = tableView.dequeueReusableCell(withIdentifier: "right", for: indexPath) as? ChatRoomCell
+            print(chatsLog[indexPath.row].msg)
+            cell?.rightLabel.text = chatsLog[indexPath.item].msg
+        }
+        
+        
+        
+        
+        
+        
+        
+        return cell!
+    }
+    
+    
+    
+    
+    
 }
+
+
+
+
+
+

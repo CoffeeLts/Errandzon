@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout  {
     
-    var local_tags = ["Delivery","Coding","Fishing","Repair","Others"]
+    
     @IBOutlet var tagsBox: UICollectionView!
     let cellScaling: CGFloat = 0.6
     var editEnabled = false
@@ -62,7 +62,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         
-        return local_tags.count
+        return user_tags.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -79,8 +79,9 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagBoxCell
 
-        cell.tagsLabel.text = local_tags[indexPath.row]
+        cell.tagsLabel.text = user_tags[indexPath.row]
         cell.backgroundColor = UIColor(rgb: 0x358E7C)
+        cell.deleteIcon.isHidden = true
         // Configure the cell
         
         return cell
@@ -102,6 +103,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
             if(selectedTags.count != 0){
                 doneSelectingToRemove(sender)
                 if(isDoneSelectingToRemove == false){
+                    print("a")
                     return
                 }
                 else{
@@ -140,9 +142,9 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
 //            cell.deleteIcon.isHidden = true
 //        }
         for item in selectedTags{
-            if let index = local_tags.index(of: item) {
+            if let index = user_tags.index(of: item) {
                 //print("\(local_tags[index]) deleted!")
-                self.local_tags.remove(at: index)
+                user_tags.remove(at: index)
                 
             }
         }
@@ -156,7 +158,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! TagBoxCell
         if(editEnabled == true){
-            selectedTags.append(local_tags[indexPath.item])
+            selectedTags.append(user_tags[indexPath.item])
             cell.deleteIcon.isHidden = false
         }
         
@@ -168,7 +170,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         let cell = collectionView.cellForItem(at: indexPath) as! TagBoxCell
         if(editEnabled == true){
             cell.deleteIcon.isHidden = true
-            if let index = selectedTags.index(of: local_tags[indexPath.item]) {
+            if let index = selectedTags.index(of: user_tags[indexPath.item]) {
                 self.selectedTags.remove(at: index)
             }
         }

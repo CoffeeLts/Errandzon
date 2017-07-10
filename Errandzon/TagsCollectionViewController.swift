@@ -144,7 +144,9 @@ class TagsCollectionViewController: UICollectionViewController {
     
     
     @IBAction func saveTags(_ sender: Any) {
-        for item in selectedTags {
+        user_tags.append(contentsOf: selectedTags)
+        
+        for item in user_tags {
             print(item)
         }
     }

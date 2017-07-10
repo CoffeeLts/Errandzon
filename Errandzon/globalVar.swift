@@ -45,6 +45,7 @@ var errands:[Errands] = [
     Errands(publisher: "Ge fei", title: "Repairing", details: "My keyboard is broken, please help me to fix it", rewards: "Lame jokes", publishTime: "5 hours ago",tags: ["Repair"])
 ]
 
+var user_tags = ["Delivery","Coding","Fishing","Repair","Others"]
 
 var tags:[String] = ["Delivery","Foods","Companion","Coach","Player","Sports","Gamer","Swimming","Coding","Project","Fishing","Modeling","Designer","Promoter","Sales","Repair","Tutor","Partner","Survey","Entertainer","Comedian","Heavy lifting","Planner","Cleaning", "Reminder" ,"Cooking", "Lost","Others"]
     
