@@ -50,7 +50,6 @@ class ServerManage {
                 
                 if let status = json[ServerResponse.status.rawValue] as? String {
                     callback(ServerState(rawValue: status)!)
-                    self.setNickName("qwe", callback: self.test)
                 }
                 
             }
