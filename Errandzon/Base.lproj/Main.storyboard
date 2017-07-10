@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YLc-n5-YJg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Zn-Ww-xSb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -327,7 +327,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Wxl-ah-JJK" kind="presentation" id="j7F-Ll-NH7"/>
+                        <segue destination="Wxl-ah-JJK" kind="presentation" identifier="init" id="j7F-Ll-NH7"/>
                         <segue destination="Vbu-qd-YgF" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettingsWithSegue:" id="lJ5-Kb-WNe"/>
                     </connections>
                 </collectionViewController>
@@ -1630,15 +1630,15 @@
             </objects>
             <point key="canvasLocation" x="3089" y="214"/>
         </scene>
-        <!--View Controller-->
+        <!--Set Nick Name View Controller-->
         <scene sceneID="8xN-a9-l22">
             <objects>
-                <viewController id="474-kP-gga" customClass="ViewController" customModule="Errandzon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="474-kP-gga" customClass="setNickNameViewController" customModule="Errandzon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ybf-HK-VGs"/>
                         <viewControllerLayoutGuide type="bottom" id="WBu-gA-AS5"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="m8G-X6-51e">
+                    <view key="view" contentMode="scaleToFill" id="m8G-X6-51e" customClass="Setn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1652,7 +1652,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5G2-nx-i28">
                                 <rect key="frame" x="86" y="246" width="244" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1663,12 +1663,16 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cMz-s9-Ewn" kind="show" id="PrL-wT-j8k"/>
+                                    <action selector="nextButton" destination="474-kP-gga" eventType="touchUpInside" id="V4m-OX-Vxc"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="5G2-nx-i28" id="Kqy-9k-wxd"/>
+                        <segue destination="cMz-s9-Ewn" kind="show" identifier="nicknameGoTag" id="gAp-1W-UY6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvU-47-7GJ" sceneMemberID="firstResponder"/>
             </objects>
@@ -1823,8 +1827,8 @@
         <image name="wooden_texture" width="850" height="850"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PrL-wT-j8k"/>
-        <segue reference="mgU-7E-FcV"/>
+        <segue reference="gAp-1W-UY6"/>
         <segue reference="u92-Cc-yDS"/>
+        <segue reference="mgU-7E-FcV"/>
     </inferredMetricsTieBreakers>
 </document>
