@@ -9,9 +9,9 @@
 import UIKit
 import AnimatedCollectionViewLayout
 
-class TagsCollectionViewCell: UICollectionViewCell {
+class TagsCollectionViewCell: BaseCollectionViewCell {
     
-    
+
     var tagsLabel:UILabel = {
         let tags = UILabel()
         tags.font = UIFont(name:"MarkerFelt-Wide" , size: 24)
@@ -19,26 +19,50 @@ class TagsCollectionViewCell: UICollectionViewCell {
         return tags
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    var tickIcon:UIImageView = {
         
-        //addSubview(detailView)
-        setupView()
+        let image: UIImage = UIImage(named: "tick1")!
+        let tick = UIImageView(image: image)
         
         
+//        let size = CGRect(x: 0, y: 0, width: 5, height: 5)
+//        //tick.sizeThatFits(size)
+//        tick.frame = CGRect(x: , y: 0, width: 20  , height: 20)
+// 
+        tick.alpha = 0.0
+        tick.contentMode = .scaleAspectFill
+        
+        return tick
+    }()
+    
+    override var isSelected: Bool  {
+        didSet {
+            tickIcon.alpha  = isSelected ?  1 : 0
+            
+        }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    func tick(){
+//        tickIcon.alpha = 1
+//    }
+//    
+//    func untick(){
+//        tickIcon.alpha = 0
+//    }
     
-    
-    
-    
-    func setupView(){
+    override func setupViews(){
+        
+        self.layer.cornerRadius = 8
+        
         addSubview(tagsLabel)
+        addSubview(tickIcon)
         
-        addContraintsWithFormat("H:|-16-[v0]-16-|", views: tagsLabel)
-        addContraintsWithFormat("V:|-8-[v0]|", views: tagsLabel)
+        addConstraintsWithFormat("H:|-16-[v0]-16-|", views: tagsLabel)
+        addConstraintsWithFormat("V:|-8-[v0]|", views: tagsLabel)
+        
+        addConstraintsWithFormat("H:[v0(30)]-0-|", views: tickIcon)
+        addConstraintsWithFormat("V:|-2-[v0(30)]", views: tickIcon)
+     
+        
     }
 }

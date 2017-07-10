@@ -11,7 +11,7 @@ import UIKit
 
 
 extension UIView{
-    func addContraintsWithFormat(_ format: String, views: UIView...) {
+    func addConstraintsWithFormat(_ format: String, views: UIView...) {
         var viewDict = [String: UIView]()
         
         for (index, view) in views.enumerated() {
@@ -47,3 +47,11 @@ extension UIColor {
         )
     }
 }
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
+    }
+}
+
+

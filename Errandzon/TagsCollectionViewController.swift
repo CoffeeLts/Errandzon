@@ -10,20 +10,30 @@ import UIKit
 
 
 class TagsCollectionViewController: UICollectionViewController {
-
+    
+    let cellScaling: CGFloat = 0.8
+    var selectedTags = [String]()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.collectionView?.allowsMultipleSelection = true
+        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let width = UIScreen.main.bounds.width
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let width = UIScreen.main.bounds.width * 0.8
+        
+        let insetX = (view.bounds.width - width ) / 3
+        layout.sectionInset = UIEdgeInsets(top: 8, left: insetX, bottom: 8, right: insetX)
         layout.itemSize = CGSize(width: width / 2, height: width / 4.0)
         layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 6
         
         self.collectionView?.collectionViewLayout = layout
         
         let bgImage = UIImageView();
-        bgImage.image = UIImage(named: "tagTheme")
+        bgImage.image = UIImage(named: "nightTheme")
         bgImage.contentMode = .scaleToFill
         self.collectionView?.backgroundView = bgImage
         // Uncomment the following line to preserve selection between presentations
@@ -75,8 +85,6 @@ class TagsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagsCollectionViewCell
     
-        // Configure the cell
-        
         cell.tagsLabel.text = tags[indexPath.item]
         
         cell.backgroundColor = colors[indexPath.item % colors.count]
@@ -88,7 +96,7 @@ class TagsCollectionViewController: UICollectionViewController {
     func animatedCollectionView(){
         collectionView?.reloadData()
         self.collectionView?.layoutIfNeeded()
-        let ary = collectionView?.visibleCells
+        //let ary = collectionView?.visibleCells
         
         var cells = collectionView?.visibleCells
         let last_cell = cells?[(cells?.count)!-1]
@@ -96,7 +104,7 @@ class TagsCollectionViewController: UICollectionViewController {
         cells?.insert(last_cell!, at: 0)
         
         for cell in cells! {
-            var indexPath:IndexPath = (collectionView?.indexPath(for: cell))!
+            let indexPath:IndexPath = (collectionView?.indexPath(for: cell))!
             print(indexPath)
         }
         
@@ -117,47 +125,31 @@ class TagsCollectionViewController: UICollectionViewController {
         }
     }
     
-    
-    
-    
-    
-    
-    
-//    override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-//        return CGSize(width:view.frame.width,height: 200)
-//        
-//    }
-    
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       // let cell = collectionView.cellForItem(at: indexPath) as! TagsCollectionViewCell
+        self.selectedTags.append(tags[indexPath.item])
+        //
     }
 
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+       // let cell = collectionView.cellForItem(at: indexPath) as! TagsCollectionViewCell
+        if let index = selectedTags.index(of: tags[indexPath.item]) {
+           
+            self.selectedTags.remove(at: index)
+        }
+        
+       //
+        
     }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    
+    @IBAction func saveTags(_ sender: Any) {
+        for item in selectedTags {
+            print(item)
+        }
     }
-    */
+    
+    
+
 
 }

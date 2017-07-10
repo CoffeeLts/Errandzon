@@ -11,39 +11,59 @@ import UIKit
 
 class HomeCollectionViewController: UICollectionViewController {
     
-    @IBOutlet var blackMaskingvView: UIView!
+    let menuBar: MenuBar = {
+        let mb  = MenuBar()
+        return mb
+    }()
+    
     
     
     var cellScaling:CGFloat = 0.9
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Errandzon"
         
         
         
-        navigationItem.title = "Home"
         
+    //    setupMenuBar()
+        setupCollectionView()
+        
+
+    }
+    
+    func setupCollectionView(){
+        //collectionView?.backgroundColor = UIColor.black
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * cellScaling)
-        let cellHeight = floor(screenSize.width * cellScaling)
-       
+        let cellHeight = floor((view.bounds.height - 50) * 0.8)
+        
         let insetX = (view.bounds.width - cellWidth) / 2.0
-        let insetY = (view.bounds.height - cellHeight) / 2.0
+        let insetY = ((view.bounds.height - 50) - cellHeight) / 2.0
         
-        let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
+        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        collectionView?.contentInset = UIEdgeInsets(top: insetY + 50, left: insetX, bottom: insetY, right: insetX)
         
-        collectionView?.contentInset = UIEdgeInsets(top: insetX, left: insetX, bottom: insetY, right: insetX)
-//        blackMaskingvView.layer.borderColor = UIColor.white as! CGColor
-//        blackMaskingvView.layer.borderWidth = 2.0
-//        collectionView?.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "homePageCell")
+        //collectionView?.register(MatchedFeedCell.self, forCellWithReuseIdentifier: "MFCell")
 
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
+    
         // Dispose of any resources that can be recreated.
     }
-
+   
+    private func setupMenuBar(){
+//        navigationController?.hidesBarsOnSwipe = true
+        
+        view.addSubview(menuBar)
+        view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
+        view.addConstraintsWithFormat("V:|[v0(50)]", views: menuBar)
+          
+    }
 
 
     // MARK: UICollectionViewDataSource
@@ -60,49 +80,60 @@ class HomeCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homePageCell", for: indexPath) as! HomeCollectionViewCell
         
-        print(errands[indexPath.row].publisher)
-        if((cell==nil) == true){
-            print("cell is null")
-        }
+      
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MFCell", for: indexPath) as! MatchedFeedCell
         
- //       cell.publisherLabel.text = errands[indexPath.row].publisher
- //       cell.titleLabel.text = errands[indexPath.row].title
-//        cell.details.text = errands[indexPath.row].details
-//        cell.rewards.text = errands[indexPath.row].rewards
-//    
+        
+        
+        
+        print(errands[indexPath.item].publisher)
+        cell.publisherLabel.text = errands[indexPath.row].publisher
+        cell.titleLabel.text = errands[indexPath.row].title
+        cell.rewardsTextView.text = errands[indexPath.row].rewards
+    
         // Configure the cell
      
         return cell
         
         
     }
+   
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        
+        var offset = targetContentOffset.pointee
+        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+        let roundedIndex = round(index)
+            
+        offset = CGPoint(x:roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+        targetContentOffset.pointee = offset
+    }
     
 
+// perform segue---------------------------------
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        showDetails(indexPath: indexPath)
-       
+        showDetails(indexPath: indexPath.row)
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "homePageDetailSeque" {
-            let sender = sender as! IndexPath
+            let row = sender as! Int
+            
+      
             let errandDetails = segue.destination as! HomePageDetailViewController
-            errandDetails.local_errands = errands[sender.item]
+            
+            errandDetails.local_errands = errands[row]
         }
     }
     
-    func showDetails(indexPath: IndexPath){
+    func showDetails(indexPath: Int){
          self.performSegue(withIdentifier: "homePageDetailSeque", sender: indexPath)
     }
     
-    override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-        return CGSize(width:view.frame.width,height: 200)
-        
-    }
 
 
 

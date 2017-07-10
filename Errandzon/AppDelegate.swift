@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,30 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     
     
-    var errands:[Errands] = [
-        Errands(publisher: "Dendi", title: "Delivery", details: "Need help to delivery to package to sunshine street", rewards: "5 apples", publishTime: "100 light years ago"),
-        Errands(publisher: "Hui Lian", title: "Purchase and Delivery", details: "Need help to buy McDonald's Double CheeseBurger with set A combo, regular coke with no ice!", rewards: "Some fries", publishTime: "now"),
-        Errands(publisher: "Jack", title: "Rescue mission", details: "Urgent help needed! Help me save Rose!", rewards: "Gratitude", publishTime: "??"),
-        Errands(publisher: "Duke", title: "Personal yoga Instructor", details: "I'm new to yoga, I'm willing to offer a considerate amount of money if YOU can be my personal yoga instructor( of course the money depends on the result of your teachings", rewards: "Cash(depends on result)", publishTime: "5 seconds ago"),
-        Errands(publisher: "Matt Damon", title: "I'm always dying", details: "I need some serious support as I'm always playing the role that eventually die in movies", rewards: "Signature from ME", publishTime: "5 hours ago")
-        ]
-    
-    
-    var myPostList:[Errands] = [
-        Errands(publisher: "Me", title: "blablabla", details: "Things you don't need to care", rewards: "Make yourself useful", publishTime: "123123"),
-        Errands(publisher: "Me", title: "Javelin Coach Wanted!", details: "Need someone to guide me in javelin throwing", rewards: "Good Deed", publishTime: "now"),
-        ]
-    
-    var myAcceptErrands:[Errands] = [
-        Errands(publisher: "Dendi", title: "Delivery", details: "Need help to delivery to package to sunshine street", rewards: "5 apples", publishTime: "100 light years ago"),
-        Errands(publisher: "Matt Damon", title: "I'm always dying", details: "I need some serious support as I'm always playing the role that eventually die in movies", rewards: "Signature from ME", publishTime: "5 hours ago")
-        ]
-    
-    
-    
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(rgb: 0x286C5F)
+        UIApplication.shared.statusBarStyle = .lightContent
+
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+
         
 //        [[UINavigationBar appearance] setBarTintColor:myColor];
 //        [[UINavigationBar appearance] setTranslucent:NO];
@@ -47,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -69,6 +54,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
 
 
 }

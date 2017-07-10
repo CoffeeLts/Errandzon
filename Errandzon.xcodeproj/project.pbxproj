@@ -9,53 +9,81 @@
 /* Begin PBXBuildFile section */
 		170D9CB51EFBA0EB00A4E7A0 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170D9CB41EFBA0EB00A4E7A0 /* MenuBar.swift */; };
 		170D9CB71EFBAE4300A4E7A0 /* Errands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170D9CB61EFBAE4300A4E7A0 /* Errands.swift */; };
-		170D9CB91EFBBD8C00A4E7A0 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170D9CB81EFBBD8C00A4E7A0 /* HomePageTableViewCell.swift */; };
 		1769E6961EF13DF1002A484D /* SearchBarInNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769E6951EF13DF1002A484D /* SearchBarInNav.swift */; };
-		1769E6981EF14238002A484D /* HomePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769E6971EF14238002A484D /* HomePageTableViewController.swift */; };
 		17CB15871EFBD6FA00C4128D /* AcceptedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB15821EFBD6FA00C4128D /* AcceptedTableViewCell.swift */; };
 		17CB15881EFBD6FA00C4128D /* AcceptedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB15831EFBD6FA00C4128D /* AcceptedTableViewController.swift */; };
 		17CB15891EFBD6FA00C4128D /* JobListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB15841EFBD6FA00C4128D /* JobListTableViewCell.swift */; };
 		17CB158A1EFBD6FA00C4128D /* JobListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB15851EFBD6FA00C4128D /* JobListTableViewController.swift */; };
 		17CB158B1EFBD6FA00C4128D /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB15861EFBD6FA00C4128D /* SettingTableViewController.swift */; };
+		21222B8D1F0E36860068A59E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21222B8C1F0E36860068A59E /* User.swift */; };
+		21222B8F1F0E4B910068A59E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21222B8E1F0E4B910068A59E /* SettingsTableViewCell.swift */; };
+		21222B911F122AFB0068A59E /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21222B901F122AFB0068A59E /* MenuCollectionViewCell.swift */; };
+		21222B931F122C110068A59E /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21222B921F122C110068A59E /* BaseCollectionViewCell.swift */; };
 		21272DC51F060FAB005A5980 /* AnimationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21272DC41F060FAB005A5980 /* AnimationCollectionViewController.swift */; };
 		21464EDC1F02A49C00C4FD7A /* globalVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21464EDB1F02A49C00C4FD7A /* globalVar.swift */; };
-		21464EDE1F02A6CC00C4FD7A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21464EDD1F02A6CC00C4FD7A /* HomeCollectionViewCell.swift */; };
-		21930F8D1F0D006A0055B50A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21930F8C1F0D006A0055B50A /* Main.storyboard */; };
+		21464EDE1F02A6CC00C4FD7A /* MatchedFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21464EDD1F02A6CC00C4FD7A /* MatchedFeedCell.swift */; };
+		2147A0C91F12DBA9003096CF /* TagBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147A0C81F12DBA9003096CF /* TagBoxCell.swift */; };
+		2147A0CB1F12EE9A003096CF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2147A0CA1F12EE9A003096CF /* Bolts.framework */; };
+		2147A0CD1F12EEAB003096CF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2147A0CC1F12EEAB003096CF /* FBSDKCoreKit.framework */; };
+		2147A0CF1F12EEC9003096CF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2147A0CE1F12EEC9003096CF /* FBSDKLoginKit.framework */; };
+		2147A0D11F12EF5A003096CF /* FacebookLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147A0D01F12EF5A003096CF /* FacebookLogInViewController.swift */; };
 		21D192861F02861900F61D57 /* Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D192851F02861900F61D57 /* Extension .swift */; };
 		21D192881F029D3800F61D57 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */; };
+		21F9DBB71F1272AA003B6922 /* AllFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9DBB51F1272AA003B6922 /* AllFeedCell.swift */; };
+		21F9DBBA1F129C34003B6922 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9DBB91F129C34003B6922 /* HomePageViewController.swift */; };
+		21F9DBBE1F12C8DB003B6922 /* AllFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9DBBD1F12C8DB003B6922 /* AllFeedTableViewController.swift */; };
+		21F9DBC01F12D87E003B6922 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9DBBF1F12D87E003B6922 /* SettingsViewController.swift */; };
 		21FBB0BA1F05A15C009F9D74 /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FBB0B91F05A15C009F9D74 /* TagsCollectionViewCell.swift */; };
 		21FBB0BC1F05A197009F9D74 /* TagsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FBB0BB1F05A197009F9D74 /* TagsCollectionViewController.swift */; };
 		2736D0021EFF74520024C99C /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2736D0011EFF74520024C99C /* AddPostTableViewController.swift */; };
+		2ACC2CC91F0EE2B100A50193 /* AcceptedDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CC81F0EE2B100A50193 /* AcceptedDetailTableViewController.swift */; };
+		2ACC2CCB1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CCA1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift */; };
+		2ACC2CCD1F0EE53000A50193 /* JobListDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CCC1F0EE53000A50193 /* JobListDetailTableViewCell.swift */; };
+		2ACC2CCF1F0EE53600A50193 /* JobListDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CCE1F0EE53600A50193 /* JobListDetailTableViewController.swift */; };
 		572B0AA41F02083900FDCB4A /* HomePageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */; };
 		572B0AA61F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */; };
 		57E9DC581F0B717600D63DFC /* JobList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9DC571F0B717600D63DFC /* JobList.swift */; };
 		ACB86D00B5240D8CD68F382B /* Pods_Errandzon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDEBABA9860AA9FDDA16126C /* Pods_Errandzon.framework */; };
 		B78310E01EE52385000AF2CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78310DF1EE52385000AF2CF /* AppDelegate.swift */; };
+		B78310E51EE52385000AF2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78310E31EE52385000AF2CF /* Main.storyboard */; settings = {ASSET_TAGS = (1, 2, ); }; };
 		B78310E71EE52385000AF2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78310E61EE52385000AF2CF /* Assets.xcassets */; };
 		B78310EA1EE52385000AF2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78310E81EE52385000AF2CF /* LaunchScreen.storyboard */; };
-		B78310F21EE525CF000AF2CF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78310F11EE525CF000AF2CF /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		170D9CB41EFBA0EB00A4E7A0 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		170D9CB61EFBAE4300A4E7A0 /* Errands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errands.swift; sourceTree = "<group>"; };
-		170D9CB81EFBBD8C00A4E7A0 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		1769E6951EF13DF1002A484D /* SearchBarInNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarInNav.swift; sourceTree = "<group>"; };
-		1769E6971EF14238002A484D /* HomePageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTableViewController.swift; sourceTree = "<group>"; };
 		17CB15821EFBD6FA00C4128D /* AcceptedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedTableViewCell.swift; sourceTree = "<group>"; };
 		17CB15831EFBD6FA00C4128D /* AcceptedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedTableViewController.swift; sourceTree = "<group>"; };
 		17CB15841EFBD6FA00C4128D /* JobListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobListTableViewCell.swift; sourceTree = "<group>"; };
 		17CB15851EFBD6FA00C4128D /* JobListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobListTableViewController.swift; sourceTree = "<group>"; };
 		17CB15861EFBD6FA00C4128D /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		21222B8C1F0E36860068A59E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		21222B8E1F0E4B910068A59E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		21222B901F122AFB0068A59E /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		21222B921F122C110068A59E /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		21272DC41F060FAB005A5980 /* AnimationCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationCollectionViewController.swift; sourceTree = "<group>"; };
 		21464EDB1F02A49C00C4FD7A /* globalVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globalVar.swift; sourceTree = "<group>"; };
-		21464EDD1F02A6CC00C4FD7A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		21930F8C1F0D006A0055B50A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		21464EDD1F02A6CC00C4FD7A /* MatchedFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedFeedCell.swift; sourceTree = "<group>"; };
+		2147A0C81F12DBA9003096CF /* TagBoxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagBoxCell.swift; sourceTree = "<group>"; };
+		2147A0CA1F12EE9A003096CF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = SOURCE_ROOT; };
+		2147A0CC1F12EEAB003096CF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		2147A0CE1F12EEC9003096CF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		2147A0D01F12EF5A003096CF /* FacebookLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogInViewController.swift; sourceTree = "<group>"; };
 		21D192851F02861900F61D57 /* Extension .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension .swift"; sourceTree = "<group>"; };
 		21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		21F9DBB51F1272AA003B6922 /* AllFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllFeedCell.swift; sourceTree = "<group>"; };
+		21F9DBB91F129C34003B6922 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		21F9DBBD1F12C8DB003B6922 /* AllFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllFeedTableViewController.swift; sourceTree = "<group>"; };
+		21F9DBBF1F12D87E003B6922 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		21FBB0B91F05A15C009F9D74 /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
 		21FBB0BB1F05A197009F9D74 /* TagsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewController.swift; sourceTree = "<group>"; };
 		2736D0011EFF74520024C99C /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
+		2ACC2CC81F0EE2B100A50193 /* AcceptedDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedDetailTableViewController.swift; sourceTree = "<group>"; };
+		2ACC2CCA1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedDetailTableViewCell.swift; sourceTree = "<group>"; };
+		2ACC2CCC1F0EE53000A50193 /* JobListDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobListDetailTableViewCell.swift; sourceTree = "<group>"; };
+		2ACC2CCE1F0EE53600A50193 /* JobListDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobListDetailTableViewController.swift; sourceTree = "<group>"; };
 		572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePageDetailViewController.swift; path = ../HomePageDetailViewController.swift; sourceTree = "<group>"; };
 		572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageDetailTableViewCell.swift; sourceTree = "<group>"; };
 		57E9DC571F0B717600D63DFC /* JobList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobList.swift; sourceTree = "<group>"; };
@@ -63,10 +91,10 @@
 		896A4E2DE1476A9F551C0679 /* Pods-Errandzon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Errandzon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Errandzon/Pods-Errandzon.debug.xcconfig"; sourceTree = "<group>"; };
 		B78310DC1EE52385000AF2CF /* Errandzon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Errandzon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78310DF1EE52385000AF2CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B78310E41EE52385000AF2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B78310E61EE52385000AF2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B78310E91EE52385000AF2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B78310EB1EE52385000AF2CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B78310F11EE525CF000AF2CF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FDEBABA9860AA9FDDA16126C /* Pods_Errandzon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Errandzon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,6 +104,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB86D00B5240D8CD68F382B /* Pods_Errandzon.framework in Frameworks */,
+				2147A0CD1F12EEAB003096CF /* FBSDKCoreKit.framework in Frameworks */,
+				2147A0CF1F12EEC9003096CF /* FBSDKLoginKit.framework in Frameworks */,
+				2147A0CB1F12EE9A003096CF /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,12 +116,18 @@
 		21D192821F0285AF00F61D57 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				21FBB0B91F05A15C009F9D74 /* TagsCollectionViewCell.swift */,
+				2ACC2CCC1F0EE53000A50193 /* JobListDetailTableViewCell.swift */,
 				17CB15841EFBD6FA00C4128D /* JobListTableViewCell.swift */,
 				572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */,
-				170D9CB81EFBBD8C00A4E7A0 /* HomePageTableViewCell.swift */,
+				2ACC2CCA1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift */,
 				17CB15821EFBD6FA00C4128D /* AcceptedTableViewCell.swift */,
-				21464EDD1F02A6CC00C4FD7A /* HomeCollectionViewCell.swift */,
+				21464EDD1F02A6CC00C4FD7A /* MatchedFeedCell.swift */,
+				21222B8E1F0E4B910068A59E /* SettingsTableViewCell.swift */,
+				21222B901F122AFB0068A59E /* MenuCollectionViewCell.swift */,
+				2147A0C81F12DBA9003096CF /* TagBoxCell.swift */,
+				21FBB0B91F05A15C009F9D74 /* TagsCollectionViewCell.swift */,
+				21222B921F122C110068A59E /* BaseCollectionViewCell.swift */,
+				21F9DBB51F1272AA003B6922 /* AllFeedCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -106,19 +143,34 @@
 		21D192841F0285EB00F61D57 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B78310F11EE525CF000AF2CF /* LoginController.swift */,
+				2147A0D01F12EF5A003096CF /* FacebookLogInViewController.swift */,
 				2736D0011EFF74520024C99C /* AddPostTableViewController.swift */,
 				17CB15851EFBD6FA00C4128D /* JobListTableViewController.swift */,
-				57E9DC571F0B717600D63DFC /* JobList.swift */,
+				2ACC2CCE1F0EE53600A50193 /* JobListDetailTableViewController.swift */,
 				17CB15831EFBD6FA00C4128D /* AcceptedTableViewController.swift */,
+				2ACC2CC81F0EE2B100A50193 /* AcceptedDetailTableViewController.swift */,
 				572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */,
-				1769E6971EF14238002A484D /* HomePageTableViewController.swift */,
 				17CB15861EFBD6FA00C4128D /* SettingTableViewController.swift */,
 				21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */,
 				21FBB0BB1F05A197009F9D74 /* TagsCollectionViewController.swift */,
 				21272DC41F060FAB005A5980 /* AnimationCollectionViewController.swift */,
+				170D9CB41EFBA0EB00A4E7A0 /* MenuBar.swift */,
+				21F9DBBF1F12D87E003B6922 /* SettingsViewController.swift */,
+				21F9DBB91F129C34003B6922 /* HomePageViewController.swift */,
+				21F9DBBD1F12C8DB003B6922 /* AllFeedTableViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		21F9DBAE1F124FC5003B6922 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				21222B8C1F0E36860068A59E /* User.swift */,
+				57E9DC571F0B717600D63DFC /* JobList.swift */,
+				170D9CB61EFBAE4300A4E7A0 /* Errands.swift */,
+				21464EDB1F02A49C00C4FD7A /* globalVar.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		506D377F5C2B23C734C42B03 /* Pods */ = {
@@ -133,6 +185,9 @@
 		B78310D31EE52385000AF2CF = {
 			isa = PBXGroup;
 			children = (
+				2147A0CE1F12EEC9003096CF /* FBSDKLoginKit.framework */,
+				2147A0CA1F12EE9A003096CF /* Bolts.framework */,
+				2147A0CC1F12EEAB003096CF /* FBSDKCoreKit.framework */,
 				B78310DE1EE52385000AF2CF /* Errandzon */,
 				B78310DD1EE52385000AF2CF /* Products */,
 				506D377F5C2B23C734C42B03 /* Pods */,
@@ -151,18 +206,16 @@
 		B78310DE1EE52385000AF2CF /* Errandzon */ = {
 			isa = PBXGroup;
 			children = (
+				21F9DBAE1F124FC5003B6922 /* Models */,
 				21D192841F0285EB00F61D57 /* Controllers */,
 				21D192831F0285CB00F61D57 /* Extensions */,
 				21D192821F0285AF00F61D57 /* Views */,
 				B78310DF1EE52385000AF2CF /* AppDelegate.swift */,
+				B78310E31EE52385000AF2CF /* Main.storyboard */,
 				B78310E61EE52385000AF2CF /* Assets.xcassets */,
-				21930F8C1F0D006A0055B50A /* Main.storyboard */,
 				B78310E81EE52385000AF2CF /* LaunchScreen.storyboard */,
 				B78310EB1EE52385000AF2CF /* Info.plist */,
 				1769E6951EF13DF1002A484D /* SearchBarInNav.swift */,
-				170D9CB41EFBA0EB00A4E7A0 /* MenuBar.swift */,
-				170D9CB61EFBAE4300A4E7A0 /* Errands.swift */,
-				21464EDB1F02A49C00C4FD7A /* globalVar.swift */,
 			);
 			path = Errandzon;
 			sourceTree = "<group>";
@@ -204,12 +257,17 @@
 		B78310D41EE52385000AF2CF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+					2,
+				);
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Revolutionaries;
 				TargetAttributes = {
 					B78310DB1EE52385000AF2CF = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = ZFEYLX8LPQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -237,9 +295,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21930F8D1F0D006A0055B50A /* Main.storyboard in Resources */,
 				B78310EA1EE52385000AF2CF /* LaunchScreen.storyboard in Resources */,
 				B78310E71EE52385000AF2CF /* Assets.xcassets in Resources */,
+				B78310E51EE52385000AF2CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,31 +360,50 @@
 				21FBB0BA1F05A15C009F9D74 /* TagsCollectionViewCell.swift in Sources */,
 				57E9DC581F0B717600D63DFC /* JobList.swift in Sources */,
 				17CB15891EFBD6FA00C4128D /* JobListTableViewCell.swift in Sources */,
-				B78310F21EE525CF000AF2CF /* LoginController.swift in Sources */,
+				2ACC2CC91F0EE2B100A50193 /* AcceptedDetailTableViewController.swift in Sources */,
 				572B0AA41F02083900FDCB4A /* HomePageDetailViewController.swift in Sources */,
 				17CB158A1EFBD6FA00C4128D /* JobListTableViewController.swift in Sources */,
 				21FBB0BC1F05A197009F9D74 /* TagsCollectionViewController.swift in Sources */,
-				170D9CB91EFBBD8C00A4E7A0 /* HomePageTableViewCell.swift in Sources */,
 				17CB15881EFBD6FA00C4128D /* AcceptedTableViewController.swift in Sources */,
+				2ACC2CCD1F0EE53000A50193 /* JobListDetailTableViewCell.swift in Sources */,
 				21D192881F029D3800F61D57 /* HomeCollectionViewController.swift in Sources */,
+				2147A0C91F12DBA9003096CF /* TagBoxCell.swift in Sources */,
 				21464EDC1F02A49C00C4FD7A /* globalVar.swift in Sources */,
 				B78310E01EE52385000AF2CF /* AppDelegate.swift in Sources */,
-				21464EDE1F02A6CC00C4FD7A /* HomeCollectionViewCell.swift in Sources */,
+				21222B8F1F0E4B910068A59E /* SettingsTableViewCell.swift in Sources */,
+				2147A0D11F12EF5A003096CF /* FacebookLogInViewController.swift in Sources */,
+				21222B911F122AFB0068A59E /* MenuCollectionViewCell.swift in Sources */,
+				2ACC2CCF1F0EE53600A50193 /* JobListDetailTableViewController.swift in Sources */,
+				21464EDE1F02A6CC00C4FD7A /* MatchedFeedCell.swift in Sources */,
 				21272DC51F060FAB005A5980 /* AnimationCollectionViewController.swift in Sources */,
 				21D192861F02861900F61D57 /* Extension .swift in Sources */,
+				21F9DBBE1F12C8DB003B6922 /* AllFeedTableViewController.swift in Sources */,
 				170D9CB51EFBA0EB00A4E7A0 /* MenuBar.swift in Sources */,
+				21222B931F122C110068A59E /* BaseCollectionViewCell.swift in Sources */,
 				1769E6961EF13DF1002A484D /* SearchBarInNav.swift in Sources */,
 				170D9CB71EFBAE4300A4E7A0 /* Errands.swift in Sources */,
 				17CB158B1EFBD6FA00C4128D /* SettingTableViewController.swift in Sources */,
+				21F9DBB71F1272AA003B6922 /* AllFeedCell.swift in Sources */,
+				21222B8D1F0E36860068A59E /* User.swift in Sources */,
+				21F9DBC01F12D87E003B6922 /* SettingsViewController.swift in Sources */,
+				2ACC2CCB1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift in Sources */,
 				572B0AA61F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift in Sources */,
 				17CB15871EFBD6FA00C4128D /* AcceptedTableViewCell.swift in Sources */,
-				1769E6981EF14238002A484D /* HomePageTableViewController.swift in Sources */,
+				21F9DBBA1F129C34003B6922 /* HomePageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B78310E31EE52385000AF2CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B78310E41EE52385000AF2CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		B78310E81EE52385000AF2CF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,6 +515,11 @@
 			baseConfigurationReference = 896A4E2DE1476A9F551C0679 /* Pods-Errandzon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZFEYLX8LPQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Errandzon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Revolutionaries.Errandzon;
@@ -451,6 +533,11 @@
 			baseConfigurationReference = 6B05E1425E151C0CEF53E273 /* Pods-Errandzon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZFEYLX8LPQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Errandzon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Revolutionaries.Errandzon;
