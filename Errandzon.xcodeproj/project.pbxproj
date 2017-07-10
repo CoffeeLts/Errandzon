@@ -40,6 +40,7 @@
 		2ACC2CCB1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CCA1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift */; };
 		2ACC2CCD1F0EE53000A50193 /* JobListDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CCC1F0EE53000A50193 /* JobListDetailTableViewCell.swift */; };
 		2ACC2CCF1F0EE53600A50193 /* JobListDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CCE1F0EE53600A50193 /* JobListDetailTableViewController.swift */; };
+		42A0FDDD1F137A0C00D6D41D /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0FDDC1F137A0C00D6D41D /* Server.swift */; };
 		572B0AA41F02083900FDCB4A /* HomePageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */; };
 		572B0AA61F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */; };
 		57E9DC581F0B717600D63DFC /* JobList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9DC571F0B717600D63DFC /* JobList.swift */; };
@@ -84,6 +85,7 @@
 		2ACC2CCA1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedDetailTableViewCell.swift; sourceTree = "<group>"; };
 		2ACC2CCC1F0EE53000A50193 /* JobListDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobListDetailTableViewCell.swift; sourceTree = "<group>"; };
 		2ACC2CCE1F0EE53600A50193 /* JobListDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobListDetailTableViewController.swift; sourceTree = "<group>"; };
+		42A0FDDC1F137A0C00D6D41D /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePageDetailViewController.swift; path = ../HomePageDetailViewController.swift; sourceTree = "<group>"; };
 		572B0AA51F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageDetailTableViewCell.swift; sourceTree = "<group>"; };
 		57E9DC571F0B717600D63DFC /* JobList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobList.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				B78310E81EE52385000AF2CF /* LaunchScreen.storyboard */,
 				B78310EB1EE52385000AF2CF /* Info.plist */,
 				1769E6951EF13DF1002A484D /* SearchBarInNav.swift */,
+				42A0FDDC1F137A0C00D6D41D /* Server.swift */,
 			);
 			path = Errandzon;
 			sourceTree = "<group>";
@@ -267,7 +270,6 @@
 				TargetAttributes = {
 					B78310DB1EE52385000AF2CF = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = ZFEYLX8LPQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -356,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42A0FDDD1F137A0C00D6D41D /* Server.swift in Sources */,
 				2736D0021EFF74520024C99C /* AddPostTableViewController.swift in Sources */,
 				21FBB0BA1F05A15C009F9D74 /* TagsCollectionViewCell.swift in Sources */,
 				57E9DC581F0B717600D63DFC /* JobList.swift in Sources */,
@@ -515,7 +518,7 @@
 			baseConfigurationReference = 896A4E2DE1476A9F551C0679 /* Pods-Errandzon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZFEYLX8LPQ;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -533,7 +536,7 @@
 			baseConfigurationReference = 6B05E1425E151C0CEF53E273 /* Pods-Errandzon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZFEYLX8LPQ;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
