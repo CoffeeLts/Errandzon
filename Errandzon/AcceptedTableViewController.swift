@@ -19,6 +19,7 @@ class AcceptedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     //    let myAcceptErrands = appDelegate.myAcceptErrands
         let cellIdentifier = "Cell"
+      
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AcceptedTableViewCell
         // Configure the cell...
         //cell.AcceptedtitleLabel.text = AcceptedJobTitles[indexPath.row]
