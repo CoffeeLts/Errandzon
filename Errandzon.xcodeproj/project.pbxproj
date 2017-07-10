@@ -27,6 +27,8 @@
 		2147A0CD1F12EEAB003096CF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2147A0CC1F12EEAB003096CF /* FBSDKCoreKit.framework */; };
 		2147A0CF1F12EEC9003096CF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2147A0CE1F12EEC9003096CF /* FBSDKLoginKit.framework */; };
 		2147A0D11F12EF5A003096CF /* FacebookLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147A0D01F12EF5A003096CF /* FacebookLogInViewController.swift */; };
+		2147A0D31F13752E003096CF /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147A0D21F13752E003096CF /* ChatRoom.swift */; };
+		2147A0D51F137630003096CF /* AcceptPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147A0D41F137630003096CF /* AcceptPage.swift */; };
 		21D192861F02861900F61D57 /* Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D192851F02861900F61D57 /* Extension .swift */; };
 		21D192881F029D3800F61D57 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */; };
 		21F9DBB71F1272AA003B6922 /* AllFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9DBB51F1272AA003B6922 /* AllFeedCell.swift */; };
@@ -71,6 +73,8 @@
 		2147A0CC1F12EEAB003096CF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		2147A0CE1F12EEC9003096CF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		2147A0D01F12EF5A003096CF /* FacebookLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLogInViewController.swift; sourceTree = "<group>"; };
+		2147A0D21F13752E003096CF /* ChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		2147A0D41F137630003096CF /* AcceptPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptPage.swift; sourceTree = "<group>"; };
 		21D192851F02861900F61D57 /* Extension .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension .swift"; sourceTree = "<group>"; };
 		21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		21F9DBB51F1272AA003B6922 /* AllFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllFeedCell.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				21F9DBBF1F12D87E003B6922 /* SettingsViewController.swift */,
 				21F9DBB91F129C34003B6922 /* HomePageViewController.swift */,
 				21F9DBBD1F12C8DB003B6922 /* AllFeedTableViewController.swift */,
+				2147A0D21F13752E003096CF /* ChatRoom.swift */,
+				2147A0D41F137630003096CF /* AcceptPage.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2147A0D51F137630003096CF /* AcceptPage.swift in Sources */,
 				2736D0021EFF74520024C99C /* AddPostTableViewController.swift in Sources */,
 				21FBB0BA1F05A15C009F9D74 /* TagsCollectionViewCell.swift in Sources */,
 				57E9DC581F0B717600D63DFC /* JobList.swift in Sources */,
@@ -374,6 +381,7 @@
 				2147A0D11F12EF5A003096CF /* FacebookLogInViewController.swift in Sources */,
 				21222B911F122AFB0068A59E /* MenuCollectionViewCell.swift in Sources */,
 				2ACC2CCF1F0EE53600A50193 /* JobListDetailTableViewController.swift in Sources */,
+				2147A0D31F13752E003096CF /* ChatRoom.swift in Sources */,
 				21464EDE1F02A6CC00C4FD7A /* MatchedFeedCell.swift in Sources */,
 				21272DC51F060FAB005A5980 /* AnimationCollectionViewController.swift in Sources */,
 				21D192861F02861900F61D57 /* Extension .swift in Sources */,
