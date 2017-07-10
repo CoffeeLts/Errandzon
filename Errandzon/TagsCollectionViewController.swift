@@ -39,11 +39,11 @@ class TagsCollectionViewController: UICollectionViewController {
         self.collectionView?.backgroundView = bgImage
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Register cell classes
         
         self.collectionView!.register(TagsCollectionViewCell.self, forCellWithReuseIdentifier: "tagCell")
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -54,38 +54,38 @@ class TagsCollectionViewController: UICollectionViewController {
         animatedCollectionView()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using [segue destinationViewController].
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     // MARK: UICollectionViewDataSource
-
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-
-
+    
+    //    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    //        // #warning Incomplete implementation, return the number of sections
+    //        return 1
+    //    }
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return tags.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagsCollectionViewCell
-    
+        
         cell.tagsLabel.text = tags[indexPath.item]
         
         cell.backgroundColor = colors[indexPath.item % colors.count]
@@ -117,29 +117,29 @@ class TagsCollectionViewController: UICollectionViewController {
         var delayCounter = 0.0
         for cell in cells! {
             UIView.animate(withDuration: 0.5, delay: Double(delayCounter) * 0.2, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-              //  self.collectionView?.performBatchUpdates({ () -> Void in
-                    cell.transform = CGAffineTransform.identity
-              //  }, completion:nil)
+                //  self.collectionView?.performBatchUpdates({ () -> Void in
+                cell.transform = CGAffineTransform.identity
+                //  }, completion:nil)
             }, completion: nil)
             delayCounter += 0.5
-        
+            
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       // let cell = collectionView.cellForItem(at: indexPath) as! TagsCollectionViewCell
+        // let cell = collectionView.cellForItem(at: indexPath) as! TagsCollectionViewCell
         self.selectedTags.append(tags[indexPath.item])
         //
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-       // let cell = collectionView.cellForItem(at: indexPath) as! TagsCollectionViewCell
+        // let cell = collectionView.cellForItem(at: indexPath) as! TagsCollectionViewCell
         if let index = selectedTags.index(of: tags[indexPath.item]) {
-           
+            
             self.selectedTags.remove(at: index)
         }
         
-       //
+        //
         
     }
     
@@ -147,7 +147,7 @@ class TagsCollectionViewController: UICollectionViewController {
     @IBAction func saveTags(_ sender: Any) {
         
         showAlertButton(sender)
-       
+        
     }
     func showAlertButton(_ sender: Any) {
         
@@ -164,17 +164,21 @@ class TagsCollectionViewController: UICollectionViewController {
     }
     
     func insertNewTags(alert: UIAlertAction!) {
-        user_tags.append(contentsOf: selectedTags)
-        for items in user_tags{
-            print(items)
-        }
-        if Server.is_new {
-            self.performSegue(withIdentifier: "init", sender: nil)
-            return
-        }
-        self.performSegue(withIdentifier: "unwindToSettings", sender: self)
+        print("click save")
+        Server.addTag(selectedTags, callback: letsGo)
     }
-    
-
-
+    func letsGo(_ state:ServerState){
+        print("callback now \(state.rawValue)")
+        if state == ServerState.Pass {
+            user_tags.append(contentsOf: selectedTags)
+//            for items in user_tags{
+//                print(items)
+//            }
+            if Server.is_new {
+                self.performSegue(withIdentifier: "init", sender: nil)
+                return
+            }
+            self.performSegue(withIdentifier: "unwindToSettings", sender: self)
+        }
+    }
 }
