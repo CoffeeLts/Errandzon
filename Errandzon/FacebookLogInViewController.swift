@@ -10,7 +10,7 @@ import UIKit
 import FBSDKLoginKit
 class FacebookLogInViewController: UIViewController ,FBSDKLoginButtonDelegate{
     @IBOutlet weak var facebookLogInButton: FBSDKLoginButton!
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         proccessLogin()
@@ -57,16 +57,16 @@ class FacebookLogInViewController: UIViewController ,FBSDKLoginButtonDelegate{
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.Server.login(email, callback: self.done)
                 print("here proccesslogin \(email)")
-//                let firstName = resultNew["first_name"] as! String
-//                print(firstName)
-//                let lastName = resultNew["last_name"] as! String
-//                print(lastName)
-//                if let picture = resultNew["picture"] as? NSDictionary,
-//                    let data = picture["data"] as? NSDictionary,
-//                    let url = data["url"] as? String {
-//                    print(url) //臉書大頭貼的url, 再放入imageView內秀出來
-//                }
-//                self.performSegue(withIdentifier: "setUserNameSegue", sender: nil)
+                //                let firstName = resultNew["first_name"] as! String
+                //                print(firstName)
+                //                let lastName = resultNew["last_name"] as! String
+                //                print(lastName)
+                //                if let picture = resultNew["picture"] as? NSDictionary,
+                //                    let data = picture["data"] as? NSDictionary,
+                //                    let url = data["url"] as? String {
+                //                    print(url) //臉書大頭貼的url, 再放入imageView內秀出來
+                //                }
+                //                self.performSegue(withIdentifier: "setUserNameSegue", sender: nil)
             }
             
         })
@@ -75,7 +75,11 @@ class FacebookLogInViewController: UIViewController ,FBSDKLoginButtonDelegate{
     func done(status : ServerState){
         print(status)
         if status == ServerState.Pass {
-            self.performSegue(withIdentifier: "setUserNameSegue", sender: nil)
+            if appDelegate.Server.is_new {
+                self.performSegue(withIdentifier: "setUserNameSegue", sender: nil)
+            }else{
+                self.performSegue(withIdentifier: "goHome", sender: nil)
+            }
         }
         
     }

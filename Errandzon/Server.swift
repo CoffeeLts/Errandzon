@@ -92,6 +92,39 @@ class ServerManage {
         }
         task.resume()
     }
+    func addTag(_ tag:[String],callback:@escaping((_ state:ServerState) -> Void) ) {
+        let json:[String:Any] = ["tag":tag,"api_token":token!]
+        let data = try? JSONSerialization.data(withJSONObject: json,options: .prettyPrinted)
+        let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/addTag")
+        var request = URLRequest(url: url!)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = data
+        let task = URLSession.shared.dataTask(with: request){  data, response, error in
+            
+            guard error == nil else {
+                print(error!)
+                callback(ServerState.TimeOut)
+                return
+            }
+            
+            guard let data = data else{
+                print("Data is empty")
+                callback(ServerState.TimeOut)
+                return
+            }
+//            print(String(data: data, encoding: .utf8))
+            let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
+            print(jsonObject)
+            if let json = jsonObject as? [String:Any] {
+                if let status = json[ServerResponse.status.rawValue] as? String {
+                    callback(ServerState(rawValue: status)!)
+                }
+            }
+        }
+        task.resume()
+    }
 }
 enum ServerResponse:String {
     case status

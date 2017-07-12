@@ -1711,6 +1711,7 @@
                         <segue destination="474-kP-gga" kind="show" identifier="setUserNameSegue" id="sFy-cd-zVg">
                             <nil key="action"/>
                         </segue>
+                        <segue destination="Wxl-ah-JJK" kind="presentation" identifier="goHome" id="RjG-gT-pTR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NXs-XA-j82" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1827,8 +1828,9 @@
         <image name="wooden_texture" width="850" height="850"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gAp-1W-UY6"/>
+        <segue reference="RjG-gT-pTR"/>
         <segue reference="u92-Cc-yDS"/>
         <segue reference="mgU-7E-FcV"/>
+        <segue reference="gAp-1W-UY6"/>
     </inferredMetricsTieBreakers>
 </document>
