@@ -13,6 +13,8 @@ class TagsCollectionViewController: UICollectionViewController {
     
     let cellScaling: CGFloat = 0.8
     var selectedTags = [String]()
+    var local_tags = [String]()
+    
     //let temp:SettingsViewController?
     var Server:ServerManage!
     
@@ -20,6 +22,11 @@ class TagsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         Server = appDelegate.Server
+        
+        for item in Server.notSubscribedTags{
+            print(item)
+        }
+            
         self.collectionView?.allowsMultipleSelection = true
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -44,7 +51,19 @@ class TagsCollectionViewController: UICollectionViewController {
         
         self.collectionView!.register(TagsCollectionViewCell.self, forCellWithReuseIdentifier: "tagCell")
         
+        
+        
+        
         // Do any additional setup after loading the view.
+        if(Server.is_new == true){
+           // Server.getAllTags(callback: {_ in })
+            local_tags = Server.alltags
+        }
+        else{
+           // Server.getNotSubscribedTags(callback: {_ in })
+            local_tags = Server.notSubscribedTags
+        }
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,36 +79,20 @@ class TagsCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    // MARK: UICollectionViewDataSource
-    
-    //    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-    //        // #warning Incomplete implementation, return the number of sections
-    //        return 1
-    //    }
-    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return tags.count
+        
+        return local_tags.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagsCollectionViewCell
         
-        cell.tagsLabel.text = tags[indexPath.item]
+        cell.tagsLabel.text = local_tags[indexPath.item]
         
         cell.backgroundColor = colors[indexPath.item % colors.count]
-        //cell.frame.size = setsize(self.collectionView!, layout: self.collectionViewLayout, sizeForItemAt: indexPath)
         
         return cell
     }
@@ -100,14 +103,14 @@ class TagsCollectionViewController: UICollectionViewController {
         //let ary = collectionView?.visibleCells
         
         var cells = collectionView?.visibleCells
-        let last_cell = cells?[(cells?.count)!-1]
-        cells?.removeLast()
-        cells?.insert(last_cell!, at: 0)
-        
-        for cell in cells! {
-            let indexPath:IndexPath = (collectionView?.indexPath(for: cell))!
-            print(indexPath)
+        if (cells?.count != 0 ){
+            let last_cell = cells?[(cells?.count)!-1]
+            
+            cells?.removeLast()
+            cells?.insert(last_cell!, at: 0)
         }
+        
+        
         
         let collectionViewHeight = collectionView?.bounds.size.height
         
@@ -128,13 +131,13 @@ class TagsCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // let cell = collectionView.cellForItem(at: indexPath) as! TagsCollectionViewCell
-        self.selectedTags.append(tags[indexPath.item])
+        self.selectedTags.append(local_tags[indexPath.item])
         //
     }
     
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         // let cell = collectionView.cellForItem(at: indexPath) as! TagsCollectionViewCell
-        if let index = selectedTags.index(of: tags[indexPath.item]) {
+        if let index = selectedTags.index(of: local_tags[indexPath.item]) {
             
             self.selectedTags.remove(at: index)
         }
@@ -164,21 +167,42 @@ class TagsCollectionViewController: UICollectionViewController {
     }
     
     func insertNewTags(alert: UIAlertAction!) {
-        print("click save")
-        Server.addTag(selectedTags, callback: letsGo)
+        print("clicked save")
+        print("Adding the following tags..")
+        for tags in selectedTags {
+           
+            print(tags)
+        }
+        print("\n")
+        Server.addTag(selectedTags, callback: saveTags)
+   
     }
-    func letsGo(_ state:ServerState){
-        print("callback now \(state.rawValue)")
+    
+    
+    func saveTags(_ state:ServerState){
+        print("callback now-> \(state.rawValue)")
+        print(Server.is_new)
         if state == ServerState.Pass {
-            user_tags.append(contentsOf: selectedTags)
-//            for items in user_tags{
-//                print(items)
-//            }
-            if Server.is_new {
+            // adding to local user_tags
+            
+            //user_tags.append(contentsOf: selectedTags)
+            self.Server.getNotSubscribedTags(callback: {_ in})
+            //collectionView?.reloadData()
+            //self.collectionView?.layoutIfNeeded()
+            
+            if Server.is_new == true {
+                
+                
+                Server.is_new = false
+                
                 self.performSegue(withIdentifier: "init", sender: nil)
                 return
             }
+            print("Unwinding to settings...")
+           
             self.performSegue(withIdentifier: "unwindToSettings", sender: self)
         }
     }
+    
+    
 }

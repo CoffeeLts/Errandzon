@@ -20,12 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor(rgb: 0x286C5F)
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(rgb: 0x358E7C)
         UIApplication.shared.statusBarStyle = .lightContent
 
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         Server = ServerManage()
+        
+        
         
 //        [[UINavigationBar appearance] setBarTintColor:myColor];
 //        [[UINavigationBar appearance] setTranslucent:NO];

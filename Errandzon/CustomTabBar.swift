@@ -20,7 +20,7 @@ class CustomTabBar: UITabBarController {
         
 
         
-        tabBar.tintColor = UIColor.green
+        tabBar.tintColor = UIColor(rgb:0x358E7C)
         tabBarItem.selectedImage = UIImage(named: "home")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         

@@ -8,6 +8,10 @@
 
 import Foundation
 class ServerManage {
+    var alltags = [String]()
+    var subscribedTags = [String]()
+    var notSubscribedTags = [String]()
+    
     var token:String!
     var is_new:Bool = false
     var user:[UserColumn.RawValue:Any]!
@@ -125,7 +129,186 @@ class ServerManage {
         }
         task.resume()
     }
+    
+    func removeTags(_ tag:[String],callback:@escaping((_ state:ServerState) -> Void) ) {
+        print("Number of tags to remove: \(tag.count)")
+        let json:[String:Any] = ["tag":tag,"api_token":token!]
+        let data = try? JSONSerialization.data(withJSONObject: json,options: .prettyPrinted)
+        let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/removeTag")
+        var request = URLRequest(url: url!)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = data
+        let task = URLSession.shared.dataTask(with: request){  data, response, error in
+            
+            guard error == nil else {
+                print(error!)
+                callback(ServerState.TimeOut)
+                return
+            }
+            
+            guard let data = data else{
+                print("Data is empty")
+                callback(ServerState.TimeOut)
+                return
+            }
+            //            print(String(data: data, encoding: .utf8))
+            let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
+            print(jsonObject)
+            if let json = jsonObject as? [String:Any] {
+                if let status = json[ServerResponse.status.rawValue] as? String {
+                    callback(ServerState(rawValue: status)!)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    //------------------------ TAGS
+    func getAllTags(callback:@escaping((_ state:ServerState) -> Void) ) {
+        let json:[String:Any] = ["api_token":token!]
+        let data = try? JSONSerialization.data(withJSONObject: json,options: .prettyPrinted)
+        let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/allTag")
+        var request = URLRequest(url: url!)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = data
+        
+        self.alltags.removeAll()
+        
+        let task = URLSession.shared.dataTask(with: request){  data, response, error in
+            
+            guard error == nil else {
+                print(error!)
+                callback(ServerState.TimeOut)
+                return
+            }
+            
+            guard let data = data else{
+                print("Data is empty")
+                callback(ServerState.TimeOut)
+                return
+            }
+            let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
+
+            if let json = jsonObject as? [String:Any] {
+                if let tag_data = json["data"] as? [Any] {
+                    for jsonDict in tag_data {
+                        if let item = jsonDict as? [String:Any]{
+                            if let tag_name = item["name"] as? String{
+                                self.alltags.append(tag_name)
+                            }
+                        }
+                    } 
+                }
+                
+                if let status = json[ServerResponse.status.rawValue] as? String {
+                    callback(ServerState(rawValue: status)!)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func getSubscribedTags(callback:@escaping((_ state:ServerState) -> Void) ) {
+        let json:[String:Any] = ["api_token":token!]
+        let data = try? JSONSerialization.data(withJSONObject: json,options: .prettyPrinted)
+        let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/getSubscribeTag")
+        var request = URLRequest(url: url!)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = data
+        
+        self.subscribedTags.removeAll()
+        
+        let task = URLSession.shared.dataTask(with: request){  data, response, error in
+            
+            guard error == nil else {
+                print(error!)
+                callback(ServerState.TimeOut)
+                return
+            }
+            
+            guard let data = data else{
+                print("Data is empty")
+                callback(ServerState.TimeOut)
+                return
+            }
+            let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
+
+            if let json = jsonObject as? [String:Any] {
+                if let tag_data = json["data"] as? [Any] {
+                    for jsonDict in tag_data {
+                        if let item = jsonDict as? [String:Any]{
+                            if let tag_name = item["name"] as? String{
+                                self.subscribedTags.append(tag_name)
+                            }
+                        }
+                    }
+                }
+                
+                if let status = json[ServerResponse.status.rawValue] as? String {
+                    callback(ServerState(rawValue: status)!)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func getNotSubscribedTags(callback:@escaping((_ state:ServerState) -> Void) ) {
+        let json:[String:Any] = ["api_token":token!]
+        let data = try? JSONSerialization.data(withJSONObject: json,options: .prettyPrinted)
+        let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/getUnsubscribeTag")
+        var request = URLRequest(url: url!)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = data
+        
+        self.notSubscribedTags.removeAll()
+        
+        let task = URLSession.shared.dataTask(with: request){  data, response, error in
+            
+            guard error == nil else {
+                print(error!)
+                callback(ServerState.TimeOut)
+                return
+            }
+            
+            guard let data = data else{
+                print("Data is empty")
+                callback(ServerState.TimeOut)
+                return
+            }
+            let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
+            print(jsonObject)
+            
+            if let json = jsonObject as? [String:Any] {
+                if let tag_data = json["data"] as? [Any] {
+                    for jsonDict in tag_data {
+                        if let item = jsonDict as? [String:Any]{
+                            if let tag_name = item["name"] as? String{
+                                self.notSubscribedTags.append(tag_name)
+                            }
+                        }
+                    }
+                }
+                
+                if let status = json[ServerResponse.status.rawValue] as? String {
+                    callback(ServerState(rawValue: status)!)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+ 
 }
+
+
 enum ServerResponse:String {
     case status
     case data

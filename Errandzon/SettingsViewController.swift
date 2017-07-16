@@ -10,11 +10,24 @@ import UIKit
 
 class SettingsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout  {
     
+    var Server:ServerManage!
+
     @IBAction func unwindToSettings(segue:UIStoryboardSegue) {
-        tagsBox.reloadData()
-        for item in user_tags {
-            print(item)
-        }
+        
+        self.Server.getSubscribedTags(callback: asdasd)
+        
+        
+        
+        //self.Server.getNotSubscribedTags(callback: {_ in})
+//
+//        self.localSubscribedTags = Server.subscribedTags
+//        DispatchQueue.main.async {
+//                    }
+//       
+    }
+    
+    func asdasd(_ a:ServerState){
+        self.tagsBox.reloadData()
     }
     
     @IBOutlet var tagsBox: UICollectionView!
@@ -22,18 +35,22 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
     var editEnabled = false
     var selectedTags = [String]()
     var isDoneSelectingToRemove = false
+    var localSubscribedTags = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        Server = appDelegate.Server
+        
+        self.localSubscribedTags = Server.subscribedTags
+        
         setupCollectionView()
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -52,31 +69,24 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         tagsBox.dataSource = self
         tagsBox.delegate = self
         
-        
-        
-        //collectionView?.register(MatchedFeedCell.self, forCellWithReuseIdentifier: "MFCell")
-        
     }
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         
-        return user_tags.count
+        print("Total subscribed tags = \(Server.subscribedTags.count)")
+        return Server.subscribedTags.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        
         let size = CGSize(width: (tagsBox.frame.width-20)/3, height: (tagsBox.frame.height-20)/3)
-        print (size.width)
-        print (size.height)
+
         return size
     }
     
@@ -85,7 +95,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagBoxCell
 
-        cell.tagsLabel.text = user_tags[indexPath.row]
+        cell.tagsLabel.text = Server.subscribedTags[indexPath.row]
         cell.backgroundColor = UIColor(rgb: 0x358E7C)
         cell.deleteIcon.isHidden = true
         // Configure the cell
@@ -102,23 +112,27 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
             sender.setTitle("DONE", for: .normal)
             
             tagsBox.allowsMultipleSelection = true
+            print("Edit Mode\n")
             
         }
         else{
-            
+            print("Total Selected Tags = \(selectedTags.count)")
             if(selectedTags.count != 0){
                 doneSelectingToRemove(sender)
+                // MARKKK
                 if(isDoneSelectingToRemove == false){
-                    print("a")
+                    
+                   
                     return
                 }
-                else{
-                    editEnabled = false
-                    sender.setTitle("EDIT", for: .normal)
-                    isDoneSelectingToRemove = false
-                    tagsBox.allowsMultipleSelection = false
-                }
+//                else{
+//                    editEnabled = false
+//                    sender.setTitle("EDIT", for: .normal)
+//                    isDoneSelectingToRemove = false
+//                    tagsBox.allowsMultipleSelection = false
+//                }
             }
+            print("Done Editing")
             editEnabled = false
             sender.setTitle("EDIT", for: .normal)
             isDoneSelectingToRemove = false
@@ -129,7 +143,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
     func doneSelectingToRemove(_ sender: Any) {
         let alertController = UIAlertController(title: "Confirm", message: "\(selectedTags.count)(s) has been selected. Confirm remove?", preferredStyle: UIAlertControllerStyle.alert)
         
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: removeTags))
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {action in self.removeTags(sender: sender)}))
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
         
         
@@ -137,38 +151,51 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         
         
     }
-    func removeTags(alert: UIAlertAction!) {
+    func removeTags(sender: Any) {
         
-    
-//        let total = tagsBox.indexPathsForSelectedItems!.count
-//        for indexPath in tagsBox.indexPathsForSelectedItems!(from: total, to: 1, by: -1) {
-//            print(local_tags[indexPath.item])
-//            let cell = tagsBox.cellForItem(at: indexPath) as! TagBoxCell
-//            print(cell.tagsLabel.text!)
-//            cell.deleteIcon.isHidden = true
-//        }
+        let button = sender as! UIButton
+ 
         for item in selectedTags{
-            if let index = user_tags.index(of: item) {
-                //print("\(local_tags[index]) deleted!")
-                user_tags.remove(at: index)
+            if let index = Server.subscribedTags.index(of: item) {
+                print("\(localSubscribedTags[index]) deleted!")
+//                localSubscribedTags.remove(at: index)
                 
             }
         }
         isDoneSelectingToRemove = true
+        print("Done Editing")
+        editEnabled = false
+        button.setTitle("EDIT", for: .normal)
+        tagsBox.allowsMultipleSelection = false
+        Server.removeTags(selectedTags, callback: removeFromView)
         selectedTags.removeAll()
         
         
-        tagsBox.reloadData()
+    }
+    
+    
+    
+    func removeFromView(_a:ServerState) {
+        
+        
+        self.Server.getSubscribedTags(callback: reload) 
+        
+    }
+    
+    func reload(_a:ServerState){
+        DispatchQueue.main.async {
+            
+            self.tagsBox.reloadData()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! TagBoxCell
         if(editEnabled == true){
-            selectedTags.append(user_tags[indexPath.item])
+            selectedTags.append(Server.subscribedTags[indexPath.item])
             cell.deleteIcon.isHidden = false
         }
-        
-        //
+
     }
     
     // Deselect
@@ -176,7 +203,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         let cell = collectionView.cellForItem(at: indexPath) as! TagBoxCell
         if(editEnabled == true){
             cell.deleteIcon.isHidden = true
-            if let index = selectedTags.index(of: user_tags[indexPath.item]) {
+            if let index = selectedTags.index(of: Server.subscribedTags[indexPath.item]) {
                 self.selectedTags.remove(at: index)
             }
         }

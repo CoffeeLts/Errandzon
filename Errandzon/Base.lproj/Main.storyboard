@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Zn-Ww-xSb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Zn-Ww-xSb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -288,7 +288,7 @@
             <objects>
                 <collectionViewController id="YLc-n5-YJg" userLabel="Tags" customClass="TagsCollectionViewController" customModule="Errandzon" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="6t6-Rn-Y9o">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="qGb-ns-Tkt">
@@ -316,7 +316,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yq6-yI-Bpw">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="Vbu-qd-YgF" kind="unwind" unwindAction="unwindToHomeScreen4WithSegue:" id="y5f-Pw-FM6"/>
+                                <segue destination="Vbu-qd-YgF" kind="unwind" unwindAction="unwindToSettingsWithSegue:" id="ILd-xa-tzX"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="nWj-F8-ci6">
@@ -328,7 +328,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Wxl-ah-JJK" kind="presentation" identifier="init" id="j7F-Ll-NH7"/>
-                        <segue destination="Vbu-qd-YgF" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettingsWithSegue:" id="lJ5-Kb-WNe"/>
+                        <segue destination="Vbu-qd-YgF" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettingsWithSegue:" id="l6d-YU-JD0"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBf-ec-wzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -360,7 +360,7 @@
         <scene sceneID="CqW-DB-LmM">
             <objects>
                 <navigationController title="HomePageNav" automaticallyAdjustsScrollViewInsets="NO" id="dsp-8W-Ljl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="home" id="ikA-3w-j6E"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="ikA-3w-j6E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="S2m-8V-xa7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -380,7 +380,7 @@
         <scene sceneID="yHD-7S-dWp">
             <objects>
                 <navigationController title="ManagePostList" automaticallyAdjustsScrollViewInsets="NO" id="Kaw-SD-cEB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Posts" id="p0j-sQ-gI8"/>
+                    <tabBarItem key="tabBarItem" title="My Posts" image="myjob" selectedImage="myjob" id="p0j-sQ-gI8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="OIA-8C-v0c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -400,7 +400,7 @@
         <scene sceneID="6rt-kH-P2d">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1NS-PN-0GG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Accepted" id="NtD-yq-iSP"/>
+                    <tabBarItem key="tabBarItem" title="Accepted" image="myErrands" selectedImage="myErrands" id="NtD-yq-iSP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Cgc-yC-Zvl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -420,7 +420,7 @@
         <scene sceneID="hbx-X8-msQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3fR-XG-JPu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="hf7-cd-8po"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="setting" selectedImage="setting" id="hf7-cd-8po"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="s74-Zg-1D0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1033,7 +1033,7 @@
                         <barButtonItem key="rightBarButtonItem" title="New Tags" id="8c3-Ft-Dbx">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="YLc-n5-YJg" kind="show" id="u92-Cc-yDS"/>
+                                <segue destination="cMz-s9-Ewn" kind="showDetail" id="a0n-dp-rj9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1824,13 +1824,16 @@
     </scenes>
     <resources>
         <image name="details" width="128" height="128"/>
+        <image name="home" width="40" height="40"/>
         <image name="money_bag" width="512" height="512"/>
+        <image name="myErrands" width="40" height="40"/>
+        <image name="myjob" width="40" height="40"/>
+        <image name="setting" width="40" height="40"/>
         <image name="wooden_texture" width="850" height="850"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RjG-gT-pTR"/>
-        <segue reference="u92-Cc-yDS"/>
+        <segue reference="j7F-Ll-NH7"/>
+        <segue reference="a0n-dp-rj9"/>
         <segue reference="mgU-7E-FcV"/>
-        <segue reference="gAp-1W-UY6"/>
     </inferredMetricsTieBreakers>
 </document>

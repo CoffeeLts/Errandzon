@@ -188,6 +188,7 @@
 				57E9DC571F0B717600D63DFC /* JobList.swift */,
 				170D9CB61EFBAE4300A4E7A0 /* Errands.swift */,
 				21464EDB1F02A49C00C4FD7A /* globalVar.swift */,
+				42A0FDDC1F137A0C00D6D41D /* Server.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -235,7 +236,6 @@
 				B78310E81EE52385000AF2CF /* LaunchScreen.storyboard */,
 				B78310EB1EE52385000AF2CF /* Info.plist */,
 				1769E6951EF13DF1002A484D /* SearchBarInNav.swift */,
-				42A0FDDC1F137A0C00D6D41D /* Server.swift */,
 			);
 			path = Errandzon;
 			sourceTree = "<group>";

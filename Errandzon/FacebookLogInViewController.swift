@@ -10,9 +10,14 @@ import UIKit
 import FBSDKLoginKit
 class FacebookLogInViewController: UIViewController ,FBSDKLoginButtonDelegate{
     @IBOutlet weak var facebookLogInButton: FBSDKLoginButton!
+    
+    
+    var Server = ServerManage()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        Server = appDelegate.Server
         proccessLogin()
         facebookLogInButton.readPermissions = ["public_profile", "email", "user_friends"]
         facebookLogInButton.delegate = self
@@ -75,6 +80,13 @@ class FacebookLogInViewController: UIViewController ,FBSDKLoginButtonDelegate{
     func done(status : ServerState){
         print(status)
         if status == ServerState.Pass {
+            
+            
+            
+            self.Server.getAllTags(callback: {_ in })
+            self.Server.getSubscribedTags(callback: {_ in })
+            self.Server.getNotSubscribedTags(callback: {_ in })
+            
             if appDelegate.Server.is_new {
                 self.performSegue(withIdentifier: "setUserNameSegue", sender: nil)
             }else{
