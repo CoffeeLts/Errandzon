@@ -60,11 +60,13 @@ class TagsCollectionViewController: UICollectionViewController {
             local_tags = Server.alltags
         }
         else{
-           // Server.getNotSubscribedTags(callback: {_ in })
+            Server.getNotSubscribedTags(callback: {_ in })
             local_tags = Server.notSubscribedTags
         }
        
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

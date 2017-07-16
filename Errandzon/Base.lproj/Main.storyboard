@@ -1824,11 +1824,11 @@
     </scenes>
     <resources>
         <image name="details" width="128" height="128"/>
-        <image name="home" width="40" height="40"/>
+        <image name="home" width="29" height="29"/>
         <image name="money_bag" width="512" height="512"/>
-        <image name="myErrands" width="40" height="40"/>
-        <image name="myjob" width="40" height="40"/>
-        <image name="setting" width="40" height="40"/>
+        <image name="myErrands" width="29" height="29"/>
+        <image name="myjob" width="29" height="29"/>
+        <image name="setting" width="29" height="29"/>
         <image name="wooden_texture" width="850" height="850"/>
     </resources>
     <inferredMetricsTieBreakers>

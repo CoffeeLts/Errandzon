@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
 //        self.localSubscribedTags = Server.subscribedTags
 //        DispatchQueue.main.async {
 //                    }
-//       
+        
     }
     
     func asdasd(_ a:ServerState){
@@ -158,7 +158,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         for item in selectedTags{
             if let index = Server.subscribedTags.index(of: item) {
                 print("\(localSubscribedTags[index]) deleted!")
-//                localSubscribedTags.remove(at: index)
+                localSubscribedTags.remove(at: index)
                 
             }
         }
@@ -178,7 +178,8 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
     func removeFromView(_a:ServerState) {
         
         
-        self.Server.getSubscribedTags(callback: reload) 
+        self.Server.getSubscribedTags(callback: reload)
+        
         
     }
     

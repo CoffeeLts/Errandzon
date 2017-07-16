@@ -86,6 +86,8 @@ class FacebookLogInViewController: UIViewController ,FBSDKLoginButtonDelegate{
             self.Server.getAllTags(callback: {_ in })
             self.Server.getSubscribedTags(callback: {_ in })
             self.Server.getNotSubscribedTags(callback: {_ in })
+            self.Server.getMatchedErrands(callback: {_ in })
+            print(Server.token)
             
             if appDelegate.Server.is_new {
                 self.performSegue(withIdentifier: "setUserNameSegue", sender: nil)

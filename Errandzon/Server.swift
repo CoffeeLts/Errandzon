@@ -11,6 +11,7 @@ class ServerManage {
     var alltags = [String]()
     var subscribedTags = [String]()
     var notSubscribedTags = [String]()
+    var matchedErrands = [Errands]()
     
     var token:String!
     var is_new:Bool = false
@@ -155,7 +156,7 @@ class ServerManage {
             }
             //            print(String(data: data, encoding: .utf8))
             let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
-            print(jsonObject)
+            //print(jsonObject)
             if let json = jsonObject as? [String:Any] {
                 if let status = json[ServerResponse.status.rawValue] as? String {
                     callback(ServerState(rawValue: status)!)
@@ -284,7 +285,7 @@ class ServerManage {
                 return
             }
             let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
-            print(jsonObject)
+            //print(jsonObject)
             
             if let json = jsonObject as? [String:Any] {
                 if let tag_data = json["data"] as? [Any] {
@@ -306,6 +307,69 @@ class ServerManage {
     }
     
  
+    
+    //  -------------------------- for HomeFeed ---------------------------
+    
+    func getMatchedErrands(callback:@escaping((_ state:ServerState) -> Void) ) {
+        let json:[String:Any] = ["api_token":token!]
+        let data = try? JSONSerialization.data(withJSONObject: json,options: .prettyPrinted)
+        let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/getUnsubscribeJob")
+        var request = URLRequest(url: url!)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = data
+        
+        self.notSubscribedTags.removeAll()
+        
+        let task = URLSession.shared.dataTask(with: request){  data, response, error in
+            
+            guard error == nil else {
+                print(error!)
+                callback(ServerState.TimeOut)
+                return
+            }
+            
+            guard let data = data else{
+                print("Data is empty")
+                callback(ServerState.TimeOut)
+                return
+            }
+            let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
+            print("Matched Errands")
+            print(jsonObject)
+            
+            if let json = jsonObject as? [String:Any] {
+                
+                if let errand_data = json["data"] as? [Any] {
+                    print("\nMatched Errands  STUB\n")
+//                    if let errand_tag = errand_data["tagName"] as? [Any]{
+//                        print("Errand tag")
+//                        for item in errand_tag{
+//                            if let str = item as? String{
+//                                print(str)
+//                            }
+//                        }
+//                    }
+                    
+//                    for jsonDict in tag_data {
+//                        if let item = jsonDict as? [String:Any]{
+//                            if let tag_name = item["name"] as? String{
+//                                self.notSubscribedTags.append(tag_name)
+//                            }
+//                        }
+//                    }
+                }
+                
+                if let status = json[ServerResponse.status.rawValue] as? String {
+                    callback(ServerState(rawValue: status)!)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    
 }
 
 
