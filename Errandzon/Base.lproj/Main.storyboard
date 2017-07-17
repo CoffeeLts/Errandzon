@@ -319,7 +319,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yq6-yI-Bpw">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="Vbu-qd-YgF" kind="unwind" unwindAction="unwindToSettingsWithSegue:" id="ILd-xa-tzX"/>
+                                <segue destination="Vbu-qd-YgF" kind="unwind" unwindAction="unwindToSettingsWithSegue:" id="Q6d-yh-OuQ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="nWj-F8-ci6">
@@ -643,13 +643,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="415"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m40-Tj-FI6">
-                                                    <rect key="frame" x="172" y="71.5" width="32.5" height="22.5"/>
-                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fit-j3-xHS">
+                                                    <rect key="frame" x="168.5" y="28" width="38.5" height="26"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-Bd-Exi">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-Bd-Exi" userLabel="tagsBox">
                                                     <rect key="frame" x="32" y="102" width="311" height="299"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -672,12 +672,35 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuP-GI-Mra">
+                                                    <rect key="frame" x="24" y="56" width="33" height="30"/>
+                                                    <state key="normal" title="EDIT">
+                                                        <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="EditButton:" destination="Kel-lx-EX7" eventType="touchUpInside" id="3YV-cY-3wt"/>
+                                                        <action selector="EditButton:" destination="VTr-oX-qqq" eventType="touchUpInside" id="ocs-NM-11e"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkg-6O-nLa">
+                                                    <rect key="frame" x="282" y="56" width="69" height="30"/>
+                                                    <state key="normal" title="Add Tags!">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="cMz-s9-Ewn" kind="show" id="FUc-SL-CPm"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="kUg-Bd-Exi" firstAttribute="leading" secondItem="MzM-xF-bJA" secondAttribute="leading" constant="32" id="3Ti-22-UkM"/>
-                                                <constraint firstItem="m40-Tj-FI6" firstAttribute="centerX" secondItem="MzM-xF-bJA" secondAttribute="centerX" id="7iA-fu-rcU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fkg-6O-nLa" secondAttribute="trailing" constant="16" id="82D-qr-XVi"/>
+                                                <constraint firstItem="kUg-Bd-Exi" firstAttribute="top" secondItem="Fit-j3-xHS" secondAttribute="bottom" constant="48" id="EQJ-nd-7S1"/>
                                                 <constraint firstAttribute="bottom" secondItem="kUg-Bd-Exi" secondAttribute="bottom" constant="14" id="GGi-0l-1AI"/>
-                                                <constraint firstItem="kUg-Bd-Exi" firstAttribute="top" secondItem="m40-Tj-FI6" secondAttribute="bottom" constant="8" id="KXd-wo-iHO"/>
+                                                <constraint firstItem="kUg-Bd-Exi" firstAttribute="top" secondItem="WuP-GI-Mra" secondAttribute="bottom" constant="16" id="Njz-Og-mPj"/>
+                                                <constraint firstItem="kUg-Bd-Exi" firstAttribute="top" secondItem="fkg-6O-nLa" secondAttribute="bottom" constant="16" id="Vpg-sd-Gnh"/>
+                                                <constraint firstItem="WuP-GI-Mra" firstAttribute="leading" secondItem="MzM-xF-bJA" secondAttribute="leadingMargin" constant="16" id="ct7-af-oIO"/>
+                                                <constraint firstItem="Fit-j3-xHS" firstAttribute="centerX" secondItem="MzM-xF-bJA" secondAttribute="centerX" id="f00-ki-7IB"/>
                                                 <constraint firstAttribute="trailing" secondItem="kUg-Bd-Exi" secondAttribute="trailing" constant="32" id="n0M-1y-lF0"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -710,6 +733,7 @@
                         <outlet property="postDetailsTextField" destination="jIs-bN-Nd6" id="3Ro-AD-kmk"/>
                         <outlet property="postRewardTextField" destination="507-7P-c8Y" id="y2z-Ji-naO"/>
                         <outlet property="postTitleTextField" destination="fRn-N1-Cik" id="Yfm-jm-rnV"/>
+                        <outlet property="tagsBox" destination="kUg-Bd-Exi" id="NWW-tv-Naf"/>
                         <segue destination="sfT-KO-Vgg" kind="unwind" identifier="unwindToMyPostList" unwindAction="unwindToHomeScreen3WithSegue:" id="h1A-hX-mfs"/>
                     </connections>
                 </tableViewController>
@@ -1915,8 +1939,8 @@
         <image name="wooden_texture" width="850" height="850"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RjG-gT-pTR"/>
-        <segue reference="gAp-1W-UY6"/>
+        <segue reference="j7F-Ll-NH7"/>
+        <segue reference="FUc-SL-CPm"/>
         <segue reference="IyR-40-Saz"/>
         <segue reference="VVC-at-KMJ"/>
     </inferredMetricsTieBreakers>

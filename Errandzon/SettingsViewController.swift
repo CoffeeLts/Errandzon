@@ -26,14 +26,12 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         
     }
     
-    
-    @IBAction func unwindToSettings(segue:UIStoryboardSegue) {
-        DispatchQueue.main.async {
-            self.Server.getSubscribedTags(callback: self.asdasd)
-        }
-        
-        
-    }
+//    
+//    @IBAction func unwindToSettings(segue:UIStoryboardSegue) {
+//        DispatchQueue.main.async {
+//            self.Server.getSubscribedTags(callback: self.asdasd)
+//        }
+//    }
     
     func asdasd(_ a:ServerState){
         self.tagsBox.reloadData()
