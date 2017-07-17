@@ -15,10 +15,14 @@ class TagsCollectionViewController: UICollectionViewController {
     var selectedTags = [String]()
     var local_tags = [String]()
     let group = DispatchGroup()
+    var fromNewPost: Bool = true
+    var dataGet = false;
+    
     //let temp:SettingsViewController?
     var Server:ServerManage!
     
     override func viewDidLoad() {
+        self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         Server = appDelegate.Server
@@ -51,10 +55,13 @@ class TagsCollectionViewController: UICollectionViewController {
         
         self.collectionView!.register(TagsCollectionViewCell.self, forCellWithReuseIdentifier: "tagCell")
         
-        
+        dataGet = false;
         // Do any additional setup after loading the view.
-        if(Server.is_new == true){
-           // Server.getAllTags(callback: {_ in })
+        print(fromNewPost)
+        if(Server.is_new == true || fromNewPost == true){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                self.Server.getAllTags(callback: self.getTagsFromServer)
+            })
             local_tags = Server.alltags
         }
         else{
@@ -64,27 +71,23 @@ class TagsCollectionViewController: UICollectionViewController {
             })
             
             
-           // group.enter()
+//            group.enter()
 //            DispatchQueue.main.async {
 //                self.Server.getNotSubscribedTags(callback: self.getTagsFromServer)
 //            }
-           
+//           
             
         }
-//        group.notify(queue: .main) {
-            print("Local tag A = \(self.local_tags.count)")
-//
-//        }
+        
+//        while (dataGet == false){}
+        
         print("Local tag = \(local_tags.count)")
         
     }
     
     func getTagsFromServer(_ a:ServerState){
-        //DispatchQueue.main.async(execute: {
-            self.local_tags = self.Server.notSubscribedTags
-       // })
         
-        
+        dataGet = true
         print("Server tag = \(Server.notSubscribedTags.count)")
         print("Local tag = \(local_tags.count)")
 //        group.leave()
@@ -94,6 +97,10 @@ class TagsCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+//        group.notify(queue: .main) {
+//            print("Local tag A = \(self.local_tags.count)")
+//            
+//        }
         
         animatedCollectionView()
         
@@ -108,7 +115,7 @@ class TagsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("count")
         print(Server.notSubscribedTags.count)
-        if(Server.is_new == true){
+        if(Server.is_new == true || fromNewPost == true){
             // Server.getAllTags(callback: {_ in })
             
             print(Server.alltags.count)
@@ -129,7 +136,7 @@ class TagsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagsCollectionViewCell
         
         
-        if(Server.is_new == true){
+        if(Server.is_new == true || fromNewPost == true){
             cell.tagsLabel.text = Server.alltags[indexPath.item]
         }
         else{
@@ -179,7 +186,7 @@ class TagsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // let cell = collectionView.cellForItem(at: indexPath) as! TagsCollectionViewCell
         
-        if(Server.is_new == true){
+        if(Server.is_new == true || fromNewPost == true){
             self.selectedTags.append(Server.alltags[indexPath.item])
         }
         else{
@@ -194,7 +201,7 @@ class TagsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         // let cell = collectionView.cellForItem(at: indexPath) as! TagsCollectionViewCell
         
-        if(Server.is_new == true){
+        if(Server.is_new == true || fromNewPost == true){
             if let index = selectedTags.index(of: Server.alltags[indexPath.item]) {
                 
                 self.selectedTags.remove(at: index)
@@ -255,6 +262,8 @@ class TagsCollectionViewController: UICollectionViewController {
     }
     
     func insertNewTags(alert: UIAlertAction!) {
+        LoadingOverlay.shared.showOverlay(view: self.view)
+       // touch.view.userInteractionEnabled = false
         print("clicked save")
         print("Adding the following tags..")
         for tags in selectedTags {
@@ -262,7 +271,22 @@ class TagsCollectionViewController: UICollectionViewController {
             print(tags)
         }
         print("\n")
-        Server.addTag(selectedTags, callback: saveTags)
+        if(self.fromNewPost == false){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.Server.addTag(self.selectedTags, callback: self.saveTags)
+            })
+
+        }else{
+            print("Unwinding to New Post...")
+                
+            LoadingOverlay.shared.hideOverlayView()
+            //   touch.view.userInteractionEnabled = true
+            DispatchQueue.main.async{
+                self.performSegue(withIdentifier: "unwindToPublishing", sender: self)
+            }
+            return
+
+        }
    
     }
     
@@ -271,12 +295,12 @@ class TagsCollectionViewController: UICollectionViewController {
         print("callback now-> \(state.rawValue)")
         print(Server.is_new)
         if state == ServerState.Pass {
-            // adding to local user_tags
+            DispatchQueue.main.async{
+                self.Server.getNotSubscribedTags(callback: {_ in})
+            }
             
-            //user_tags.append(contentsOf: selectedTags)
-            self.Server.getNotSubscribedTags(callback: {_ in})
-            //collectionView?.reloadData()
-            //self.collectionView?.layoutIfNeeded()
+
+
             
             if Server.is_new == true {
                 
@@ -286,9 +310,23 @@ class TagsCollectionViewController: UICollectionViewController {
                 self.performSegue(withIdentifier: "init", sender: nil)
                 return
             }
+            
             print("Unwinding to settings...")
+            LoadingOverlay.shared.hideOverlayView()
+           // touch.view.userInteractionEnabled = true
+            
+            DispatchQueue.main.async{
+                 self.performSegue(withIdentifier: "unwindToSettings", sender: self)
+            }
            
-            self.performSegue(withIdentifier: "unwindToSettings", sender: self)
+           
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if(segue.identifier == "unwindToPublishing"){
+            let newPost : AddPostTableViewController = segue.destination as! AddPostTableViewController
+            newPost.errandTags = self.selectedTags
         }
     }
     

@@ -12,7 +12,7 @@ class JobListTableViewController: UITableViewController {
     var Server:ServerManage!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var local_errands = [Errands]()
-
+    var refresher: UIRefreshControl!
     
     @IBAction func unwindToHomeScreen3(segue:UIStoryboardSegue) {
     }
@@ -53,13 +53,36 @@ class JobListTableViewController: UITableViewController {
         super.viewDidLoad()
         
         
+        
         Server = appDelegate.Server
         local_errands = Server.errandsByMe
         
+        refresher = UIRefreshControl()
+        tableView.addSubview(refresher)
+        
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
+        
+        
     }
+    func refresh() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: ({
+            self.Server.getErrandsByMe(callback: self.reload)
+
+        }))
+    }
+    func reload(_ a:ServerState){
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+            self.refresher.endRefreshing()
+        }
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

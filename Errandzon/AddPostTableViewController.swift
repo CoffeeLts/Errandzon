@@ -28,11 +28,25 @@ class AddPostTableViewController: UITableViewController, UICollectionViewDataSou
     var selectedTags = [String]()
     var isDoneSelectingToRemove = false
     var localSubscribedTags = [String]()
+    var errandTags = [String]()
+    
+    @IBAction func unwindFromTagView(segue:UIStoryboardSegue) {
+        DispatchQueue.main.async {
+            for item in self.errandTags {
+                print(item)
+            }
+            self.tagsBox.reloadData()
+            
+        }
+    }
     
     @IBAction func unwindToPublishing(segue:UIStoryboardSegue) {
         DispatchQueue.main.async {
             print("asdasda")
-            //self.Server.getSubscribedTags(callback: self.asdasd)
+            for item in self.errandTags {
+                print(item)
+            }
+            self.tagsBox.reloadData()
         }
     }
     
@@ -94,12 +108,22 @@ class AddPostTableViewController: UITableViewController, UICollectionViewDataSou
             
             return
         }
-        
-        if rewards == "" {
-            rewards = "Undefined"
+        if self.errandTags.count == 0 {
+            let alertController = UIAlertController(title: "Oops", message: "Please at least choose one tag.", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+            
+            return
         }
         
-        errands = Errands(publisher: "Me", title: postTitle!, details: details!, rewards: rewards!, publishTime: getCurrentTime(), tags: ["None"])
+        
+        if rewards == "" {
+            rewards = "Yet to be told"
+        }
+        
+//        errands = Errands(publisher: "Me", title: postTitle!, details: details!, rewards: rewards!, publishTime: getCurrentTime(), tags: ["None"])
+        
+        self.errands = Errands(publisher: "Me", title: postTitle!, details: details!, rewards: rewards!, publishTime: getCurrentTime(), tags: errandTags)
         
         showAlertButton(confirmationButton)
         
@@ -120,12 +144,20 @@ class AddPostTableViewController: UITableViewController, UICollectionViewDataSou
     }
     
     func insertNewPost(alert: UIAlertAction!) {
-        myPostList.append(errands!)
-//        appDelegate.myPostList.append(errands!)
-        self.performSegue(withIdentifier: "unwindToMyPostList", sender: self)
+        LoadingOverlay.shared.showOverlay(view: self.view)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+           self.Server.postErrandsByMe(errand: self.errands!, callback: self.backToPostList)
+        })
+        
+        
     }
 
-    
+    func backToPostList(_a: ServerState){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            LoadingOverlay.shared.hideOverlayView()
+            self.performSegue(withIdentifier: "unwindToMyPostList", sender: self)
+        })
+    }
     
     func getCurrentTime() -> String{
         let date = Date()
@@ -169,8 +201,8 @@ class AddPostTableViewController: UITableViewController, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        print("Total subscribed tags = \(Server.subscribedTags.count)")
-        return Server.subscribedTags.count
+        print("Total subscribed tags = \(errandTags.count)")
+        return errandTags.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -184,7 +216,7 @@ class AddPostTableViewController: UITableViewController, UICollectionViewDataSou
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagBoxCell
         
-        cell.tagsLabel.text = Server.subscribedTags[indexPath.row]
+        cell.tagsLabel.text = errandTags[indexPath.row]
         cell.backgroundColor = UIColor(rgb: 0x358E7C)
         cell.deleteIcon.isHidden = true
         // Configure the cell
@@ -244,9 +276,9 @@ class AddPostTableViewController: UITableViewController, UICollectionViewDataSou
         let button = sender as! UIButton
         
         for item in selectedTags{
-            if let index = Server.subscribedTags.index(of: item) {
-                print("\(Server.subscribedTags[index]) deleted!")
-                //   localSubscribedTags.remove(at: index)
+            if let index = errandTags.index(of: item) {
+                print("\(errandTags[index]) deleted!")
+                   errandTags.remove(at: index)
                 
             }
         }
@@ -255,37 +287,18 @@ class AddPostTableViewController: UITableViewController, UICollectionViewDataSou
         editEnabled = false
         button.setTitle("EDIT", for: .normal)
         tagsBox.allowsMultipleSelection = false
-        Server.removeTags(selectedTags, callback: removeFromView)
+        //Server.removeTags(selectedTags, callback: removeFromView)
         selectedTags.removeAll()
-        
-        
-    }
-    
-    
-    func relogin(alert: UIAlertAction!) {
-        self.performSegue(withIdentifier: "relogin", sender: self)
-    }
-    
-    func removeFromView(_a:ServerState) {
-        
-        
-        self.Server.getSubscribedTags(callback: reload)
-        
+        self.tagsBox.reloadData()
         
     }
     
-    func reload(_a:ServerState){
-        DispatchQueue.main.async {
-            
-            self.tagsBox.reloadData()
-        }
-    }
     
     // Select
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! TagBoxCell
         if(editEnabled == true){
-            selectedTags.append(Server.subscribedTags[indexPath.item])
+            selectedTags.append(errandTags  [indexPath.item])
             cell.deleteIcon.isHidden = false
         }
         
@@ -296,12 +309,17 @@ class AddPostTableViewController: UITableViewController, UICollectionViewDataSou
         let cell = collectionView.cellForItem(at: indexPath) as! TagBoxCell
         if(editEnabled == true){
             cell.deleteIcon.isHidden = true
-            if let index = selectedTags.index(of: Server.subscribedTags[indexPath.item]) {
+            if let index = selectedTags.index(of: errandTags[indexPath.item]) {
                 self.selectedTags.remove(at: index)
             }
         }
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if(segue.identifier == "addTagsFromNewPost"){
+            let tagController : TagsCollectionViewController = segue.destination as! TagsCollectionViewController
+            tagController.fromNewPost = true
+        }
+    }
 
 }

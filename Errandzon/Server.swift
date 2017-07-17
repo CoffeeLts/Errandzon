@@ -71,7 +71,7 @@ class ServerManage {
     }
     func setNickName(_ nickname:String,callback:@escaping((_ state:ServerState) -> Void) ) {
         let data = "nickname=\(nickname)&api_token=\(token!)"
-        self.userName = nickname
+        
         print(data)
         let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/setNickName")
         var request = URLRequest(url: url!)
@@ -583,6 +583,58 @@ class ServerManage {
         task.resume()
     }
 
+    // --------------------- New Post --------------------------
+    func postErrandsByMe( errand: Errands, callback:@escaping((_ state:ServerState) -> Void) ) {
+        
+        
+        let tagsToPost = errand.tags
+        let titleToPost = errand.title
+        let detailsToPost = errand.details
+        let rewardsToPost = errand.rewards
+        
+        let json:[String:Any?] = ["api_token":token!,
+                                 "title": titleToPost,
+                                 "details": detailsToPost,
+                                 "rewards": rewardsToPost,
+                                 "time_valid": nil,
+                                 "publish_time": nil,
+                                 "tag":tagsToPost]
+       
+        let data = try? JSONSerialization.data(withJSONObject: json,options: .prettyPrinted)
+        let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/jobPublish")
+        var request = URLRequest(url: url!)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = data
+        
+        let task = URLSession.shared.dataTask(with: request){  data, response, error in
+            
+            guard error == nil else {
+                print(error!)
+                callback(ServerState.TimeOut)
+                return
+            }
+            
+            guard let data = data else{
+                print("Data is empty")
+                callback(ServerState.TimeOut)
+                return
+            }
+            let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
+            print("My Errands")
+            
+            if let json = jsonObject as? [String:Any] {
+                if let status = json[ServerResponse.status.rawValue] as? String {
+                    callback(ServerState(rawValue: status)!)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    
+    
     
 }
 

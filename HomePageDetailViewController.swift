@@ -38,7 +38,7 @@ class HomePageDetailViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 5
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
@@ -62,6 +62,19 @@ class HomePageDetailViewController: UITableViewController {
             case 3:
                 cell2.fieldLabel.text = "Details"
                 cell2.valueLabel.text = local_errands.details
+            case 4:
+                
+                cell2.fieldLabel.text = "Tags"
+                let total_count = local_errands.tags.count
+                var count = 0
+                cell2.valueLabel.text = ""
+                for tags in local_errands.tags{
+                    cell2.valueLabel.text?.append(tags)
+                    if(count + 1 != total_count){
+                        cell2.valueLabel.text?.append(", ")
+                    }
+                    count = count + 1
+                }
             default:
                 cell2.fieldLabel.text = ""
                 cell2.valueLabel.text = ""

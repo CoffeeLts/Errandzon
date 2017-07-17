@@ -26,15 +26,25 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         
     }
     
-//    
-//    @IBAction func unwindToSettings(segue:UIStoryboardSegue) {
-//        DispatchQueue.main.async {
-//            self.Server.getSubscribedTags(callback: self.asdasd)
-//        }
-//    }
+    
+    @IBAction func unwindFromTagView(segue:UIStoryboardSegue) {
+        print("Back to Settings")
+       // DispatchQueue.main.async {
+            self.Server.getSubscribedTags(callback: self.asdasd)
+       // }
+    }
+    
+    @IBAction func unwindToSettings(segue:UIStoryboardSegue) {
+        print("Back to Settings")
+        // DispatchQueue.main.async {
+        self.Server.getSubscribedTags(callback: self.asdasd)
+        // }
+    }
     
     func asdasd(_ a:ServerState){
-        self.tagsBox.reloadData()
+        DispatchQueue.main.async {
+            self.tagsBox.reloadData()
+        }
     }
     
     @IBOutlet var tagsBox: UICollectionView!
@@ -49,6 +59,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         Server = appDelegate.Server
+        userName.textColor = UIColor.white
         userName.text = Server.userName
         self.localSubscribedTags = Server.subscribedTags
         
@@ -201,8 +212,10 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func removeFromView(_a:ServerState) {
         
-        
-        self.Server.getSubscribedTags(callback: reload)
+        DispatchQueue.main.async{
+            self.Server.getSubscribedTags(callback: self.reload)
+        }
+       
         
         
     }
@@ -235,7 +248,15 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         }
     }
     
- 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if(segue.identifier == "addTagsFromSettings" ){
+            let tagController : TagsCollectionViewController = segue.destination as! TagsCollectionViewController
+            tagController.fromNewPost = false
+        }
+        
+        
+        
+    }
     
     
 }

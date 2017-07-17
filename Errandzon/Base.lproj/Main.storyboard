@@ -319,7 +319,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yq6-yI-Bpw">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="Vbu-qd-YgF" kind="unwind" unwindAction="unwindToSettingsWithSegue:" id="Q6d-yh-OuQ"/>
+                                <segue destination="Vbu-qd-YgF" kind="unwind" unwindAction="unwindFromTagViewWithSegue:" id="alY-dq-Tbk"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="nWj-F8-ci6">
@@ -332,6 +332,8 @@
                     <connections>
                         <segue destination="Wxl-ah-JJK" kind="presentation" identifier="init" id="j7F-Ll-NH7"/>
                         <segue destination="Vbu-qd-YgF" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettingsWithSegue:" id="l6d-YU-JD0"/>
+                        <segue destination="Vbu-qd-YgF" kind="unwind" identifier="unwindToPublishing" unwindAction="unwindToPublishingWithSegue:" id="bRz-Ts-Ba5"/>
+                        <segue destination="Vbu-qd-YgF" kind="unwind" identifier="unwindFromTagView" unwindAction="unwindFromTagViewWithSegue:" id="tLU-t7-4AJ"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBf-ec-wzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -688,7 +690,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="cMz-s9-Ewn" kind="show" id="FUc-SL-CPm"/>
+                                                        <segue destination="YLc-n5-YJg" kind="show" identifier="addTagsFromNewPost" id="egc-J4-AW4"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -883,7 +885,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBC-jt-hfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gZh-2Q-TgX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3917.5999999999999" y="975.56221889055485"/>
+            <point key="canvasLocation" x="4583" y="2093"/>
         </scene>
         <!--Setting Table View Controller-->
         <scene sceneID="RE7-x3-yGI">
@@ -998,7 +1000,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxt-0I-aKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2164" y="976"/>
+            <point key="canvasLocation" x="3433" y="2093"/>
         </scene>
         <!--Settings-->
         <scene sceneID="WlF-0g-Ko9">
@@ -1066,7 +1068,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cMz-s9-Ewn" kind="show" id="bzi-ZI-7ST"/>
+                                    <segue destination="YLc-n5-YJg" kind="show" identifier="addTagsFromSettings" id="y0Y-uY-b86"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uU-KU-Jpg">
@@ -1367,13 +1369,10 @@
                         <color key="barTintColor" red="0.20784313730000001" green="0.5568627451" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="YLc-n5-YJg" kind="relationship" relationship="rootViewController" id="UEE-W5-2to"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kl-WT-MTz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4881" y="976"/>
+            <point key="canvasLocation" x="5506" y="2093"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8Ii-IR-6cV">
@@ -1769,7 +1768,7 @@
                     </view>
                     <connections>
                         <outlet property="textField" destination="5G2-nx-i28" id="Kqy-9k-wxd"/>
-                        <segue destination="cMz-s9-Ewn" kind="show" identifier="nicknameGoTag" id="gAp-1W-UY6"/>
+                        <segue destination="YLc-n5-YJg" kind="show" identifier="nicknameGoTag" id="LQE-VP-MFI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvU-47-7GJ" sceneMemberID="firstResponder"/>
@@ -1788,6 +1787,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nightTheme" translatesAutoresizingMaskIntoConstraints="NO" id="bxl-pB-4AX" userLabel="Background Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfS-t7-4rY" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="20" y="300" width="335" height="67"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1796,10 +1799,6 @@
                                     <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nightTheme" translatesAutoresizingMaskIntoConstraints="NO" id="bxl-pB-4AX" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1940,7 +1939,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="j7F-Ll-NH7"/>
-        <segue reference="FUc-SL-CPm"/>
+        <segue reference="y0Y-uY-b86"/>
         <segue reference="IyR-40-Saz"/>
         <segue reference="VVC-at-KMJ"/>
     </inferredMetricsTieBreakers>

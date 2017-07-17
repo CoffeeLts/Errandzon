@@ -41,6 +41,7 @@
 		21FBB0BC1F05A197009F9D74 /* TagsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FBB0BB1F05A197009F9D74 /* TagsCollectionViewController.swift */; };
 		2736D0021EFF74520024C99C /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2736D0011EFF74520024C99C /* AddPostTableViewController.swift */; };
 		2A91CC351F1CF83C00EEF02E /* AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A91CC341F1CF83C00EEF02E /* AddCell.swift */; };
+		2A91CC371F1D33B900EEF02E /* overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A91CC361F1D33B900EEF02E /* overlay.swift */; };
 		2ACC2CC91F0EE2B100A50193 /* AcceptedDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CC81F0EE2B100A50193 /* AcceptedDetailTableViewController.swift */; };
 		2ACC2CCB1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CCA1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift */; };
 		2ACC2CCD1F0EE53000A50193 /* JobListDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC2CCC1F0EE53000A50193 /* JobListDetailTableViewCell.swift */; };
@@ -93,6 +94,7 @@
 		21FBB0BB1F05A197009F9D74 /* TagsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewController.swift; sourceTree = "<group>"; };
 		2736D0011EFF74520024C99C /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
 		2A91CC341F1CF83C00EEF02E /* AddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCell.swift; sourceTree = "<group>"; };
+		2A91CC361F1D33B900EEF02E /* overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = overlay.swift; sourceTree = "<group>"; };
 		2ACC2CC81F0EE2B100A50193 /* AcceptedDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedDetailTableViewController.swift; sourceTree = "<group>"; };
 		2ACC2CCA1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedDetailTableViewCell.swift; sourceTree = "<group>"; };
 		2ACC2CCC1F0EE53000A50193 /* JobListDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobListDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				21F9DBBF1F12D87E003B6922 /* SettingsViewController.swift */,
 				2736D0011EFF74520024C99C /* AddPostTableViewController.swift */,
 				21FBB0BB1F05A197009F9D74 /* TagsCollectionViewController.swift */,
+				2A91CC361F1D33B900EEF02E /* overlay.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				21F9DBC01F12D87E003B6922 /* SettingsViewController.swift in Sources */,
 				2147A0D71F138579003096CF /* ChatRoomCell.swift in Sources */,
 				2ACC2CCB1F0EE2FC00A50193 /* AcceptedDetailTableViewCell.swift in Sources */,
+				2A91CC371F1D33B900EEF02E /* overlay.swift in Sources */,
 				572B0AA61F020F9B00FDCB4A /* HomePageDetailTableViewCell.swift in Sources */,
 				17CB15871EFBD6FA00C4128D /* AcceptedTableViewCell.swift in Sources */,
 				21F9DBBA1F129C34003B6922 /* HomePageViewController.swift in Sources */,
