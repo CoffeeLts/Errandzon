@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
     
     var Server:ServerManage!
     
+    @IBOutlet var userName: UILabel!
 
     
     @IBAction func facebookLogOut(_ sender: UIButton) {
@@ -50,7 +51,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         Server = appDelegate.Server
-        
+        userName.text = Server.userName
         self.localSubscribedTags = Server.subscribedTags
         
         setupCollectionView()
@@ -84,7 +85,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     
@@ -103,30 +104,14 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.section == 0 {
-            let firstCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addCell", for: indexPath) as! AddCell
-            firstCell.backgroundColor = UIColor(white: 0, alpha: 1)
-            return firstCell
-        }
-        else{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagBoxCell
-            
-            cell.tagsLabel.text = Server.subscribedTags[indexPath.row]
-            cell.backgroundColor = UIColor(rgb: 0x358E7C)
-            cell.deleteIcon.isHidden = true
-            // Configure the cell
-            
-            return cell
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagBoxCell
+
+        cell.tagsLabel.text = Server.subscribedTags[indexPath.row]
+        cell.backgroundColor = UIColor(rgb: 0x358E7C)
+        cell.deleteIcon.isHidden = true
+        // Configure the cell
         
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagBoxCell
-//
-//        cell.tagsLabel.text = Server.subscribedTags[indexPath.row]
-//        cell.backgroundColor = UIColor(rgb: 0x358E7C)
-//        cell.deleteIcon.isHidden = true
-//        // Configure the cell
-//        
-//        return cell
+        return cell
         
         
     }

@@ -15,6 +15,7 @@ class ServerManage {
     var allErrands = [Errands]()
     var acceptedErrands = [Errands]()
     var errandsByMe = [Errands]()
+    var userName:String!
     
     var token:String!
     var is_new:Bool = false
@@ -70,6 +71,7 @@ class ServerManage {
     }
     func setNickName(_ nickname:String,callback:@escaping((_ state:ServerState) -> Void) ) {
         let data = "nickname=\(nickname)&api_token=\(token!)"
+        self.userName = nickname
         print(data)
         let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/setNickName")
         var request = URLRequest(url: url!)

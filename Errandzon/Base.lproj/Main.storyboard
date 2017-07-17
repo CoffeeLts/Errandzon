@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Zn-Ww-xSb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Zn-Ww-xSb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -290,7 +290,7 @@
         <scene sceneID="b2t-F3-qD8">
             <objects>
                 <collectionViewController id="YLc-n5-YJg" userLabel="Tags" customClass="TagsCollectionViewController" customModule="Errandzon" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6t6-Rn-Y9o">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="6t6-Rn-Y9o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1001,16 +1001,8 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="addCell" reuseIdentifier="addCell" id="a3i-pZ-lfP" customClass="TagBoxCell" customModule="Errandzon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="131" height="119"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="131" height="119"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="tagCell" reuseIdentifier="tagCell" id="Hdm-rJ-afn" customClass="TagBoxCell" customModule="Errandzon" customModuleProvider="target">
-                                        <rect key="frame" x="180" y="0.0" width="131" height="119"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="131" height="119"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="131" height="119"/>
@@ -1026,20 +1018,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bO-gU-6vU">
-                                <rect key="frame" x="32" y="185" width="311" height="26"/>
+                                <rect key="frame" x="32" y="153" width="311" height="26"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uU-KU-Jpg">
-                                <rect key="frame" x="310" y="181" width="33" height="30"/>
-                                <state key="normal" title="EDIT">
-                                    <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="EditButton:" destination="VTr-oX-qqq" eventType="touchUpInside" id="MGC-3u-3fH"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7d7-Z7-X6v">
                                 <rect key="frame" x="137.5" y="114" width="100" height="30"/>
                                 <constraints>
@@ -1053,19 +1036,39 @@
                                     <segue destination="1Zn-Ww-xSb" kind="presentation" identifier="relogin" id="Wh3-R6-OSF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52F-RA-P4o">
+                                <rect key="frame" x="274" y="181" width="69" height="30"/>
+                                <state key="normal" title="Add Tags!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cMz-s9-Ewn" kind="show" id="bzi-ZI-7ST"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uU-KU-Jpg">
+                                <rect key="frame" x="32" y="181" width="33" height="30"/>
+                                <state key="normal" title="EDIT">
+                                    <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="EditButton:" destination="VTr-oX-qqq" eventType="touchUpInside" id="MGC-3u-3fH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Mcb-fV-ajO" secondAttribute="trailing" constant="16" id="3un-P0-82A"/>
                             <constraint firstItem="Mcb-fV-ajO" firstAttribute="centerX" secondItem="Zac-DQ-QgP" secondAttribute="centerX" id="6Lb-gS-Q4r"/>
+                            <constraint firstItem="Mcb-fV-ajO" firstAttribute="top" secondItem="52F-RA-P4o" secondAttribute="bottom" constant="16" id="8MJ-CA-15S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="52F-RA-P4o" secondAttribute="trailing" constant="16" id="Ad0-gC-1R3"/>
                             <constraint firstAttribute="trailing" secondItem="7bO-gU-6vU" secondAttribute="trailing" constant="32" id="EIs-Bh-4jG"/>
                             <constraint firstItem="7d7-Z7-X6v" firstAttribute="top" secondItem="NoX-DN-8hY" secondAttribute="bottom" constant="8" id="Isu-Mc-2sS"/>
                             <constraint firstItem="Mcb-fV-ajO" firstAttribute="leading" secondItem="Zac-DQ-QgP" secondAttribute="leadingMargin" constant="16" id="KTl-5D-py8"/>
-                            <constraint firstItem="Mcb-fV-ajO" firstAttribute="top" secondItem="7bO-gU-6vU" secondAttribute="bottom" constant="16" id="LGL-6h-2od"/>
-                            <constraint firstAttribute="trailing" secondItem="9uU-KU-Jpg" secondAttribute="trailing" constant="32" id="LJj-m6-xuU"/>
+                            <constraint firstItem="Mcb-fV-ajO" firstAttribute="top" secondItem="7bO-gU-6vU" secondAttribute="bottom" constant="48" id="LGL-6h-2od"/>
                             <constraint firstItem="Mcb-fV-ajO" firstAttribute="top" secondItem="9uU-KU-Jpg" secondAttribute="bottom" constant="16" id="My9-FD-9Rh"/>
                             <constraint firstItem="0A1-5k-yzo" firstAttribute="top" secondItem="Mcb-fV-ajO" secondAttribute="bottom" constant="16" id="VBK-cn-Ioy"/>
                             <constraint firstItem="7bO-gU-6vU" firstAttribute="centerX" secondItem="Zac-DQ-QgP" secondAttribute="centerX" id="Wrl-wK-69g"/>
+                            <constraint firstItem="9uU-KU-Jpg" firstAttribute="leading" secondItem="Zac-DQ-QgP" secondAttribute="leadingMargin" constant="16" id="YD6-Ov-Ou9"/>
                             <constraint firstItem="NoX-DN-8hY" firstAttribute="top" secondItem="b3K-b3-Y4J" secondAttribute="bottom" constant="80" id="fQ0-Yy-CfS"/>
                             <constraint firstItem="7d7-Z7-X6v" firstAttribute="centerX" secondItem="Zac-DQ-QgP" secondAttribute="centerX" id="h8J-nR-EoM"/>
                             <constraint firstItem="7bO-gU-6vU" firstAttribute="leading" secondItem="Zac-DQ-QgP" secondAttribute="leading" constant="32" id="lEj-9d-PdH"/>
@@ -1073,16 +1076,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="NoX-DN-8hY" secondAttribute="trailing" constant="16" id="ted-iV-avL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="Z9e-kF-sNo">
-                        <barButtonItem key="rightBarButtonItem" title="New Tags" id="8c3-Ft-Dbx">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="cMz-s9-Ewn" kind="showDetail" id="a0n-dp-rj9"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" id="Z9e-kF-sNo"/>
                     <connections>
                         <outlet property="tagsBox" destination="Mcb-fV-ajO" id="KoQ-mI-udr"/>
+                        <outlet property="userName" destination="NoX-DN-8hY" id="FWN-bi-weP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylU-IZ-9Fe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1893,9 +1890,9 @@
         <image name="wooden_texture" width="850" height="850"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a0n-dp-rj9"/>
         <segue reference="RjG-gT-pTR"/>
         <segue reference="IyR-40-Saz"/>
         <segue reference="VVC-at-KMJ"/>
+        <segue reference="bzi-ZI-7ST"/>
     </inferredMetricsTieBreakers>
 </document>
