@@ -23,10 +23,6 @@ extension UIView{
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewDict))
     }
     
-//    func setBackGroundImage(){
-//        
-//    }
-    
     
 }
 

@@ -1054,11 +1054,11 @@
                         <viewControllerLayoutGuide type="bottom" id="h1V-xk-FmV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="b21-md-hCt">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hKr-Qc-GQ3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="529"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="left" id="5vt-YO-6gn" customClass="ChatRoomCell" customModule="Errandzon" customModuleProvider="target">
@@ -1114,7 +1114,7 @@
                                 </prototypes>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter text here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zQx-SQ-HM0">
-                                <rect key="frame" x="0.0" y="529" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="480" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1Xg-HL-boZ"/>
                                 </constraints>
@@ -1384,6 +1384,14 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="CjS-P1-VvD">
+                        <barButtonItem key="rightBarButtonItem" image="msg" id="ZHe-pJ-vyy" userLabel="msg">
+                            <color key="tintColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="ANR-x1-uGJ" kind="show" id="VVC-at-KMJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7QD-Fk-JM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1826,14 +1834,16 @@
         <image name="details" width="128" height="128"/>
         <image name="home" width="29" height="29"/>
         <image name="money_bag" width="512" height="512"/>
+        <image name="msg" width="29" height="29"/>
         <image name="myErrands" width="29" height="29"/>
         <image name="myjob" width="29" height="29"/>
         <image name="setting" width="29" height="29"/>
         <image name="wooden_texture" width="850" height="850"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j7F-Ll-NH7"/>
+        <segue reference="RjG-gT-pTR"/>
         <segue reference="a0n-dp-rj9"/>
         <segue reference="mgU-7E-FcV"/>
+        <segue reference="VVC-at-KMJ"/>
     </inferredMetricsTieBreakers>
 </document>
