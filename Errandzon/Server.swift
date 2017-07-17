@@ -12,6 +12,9 @@ class ServerManage {
     var subscribedTags = [String]()
     var notSubscribedTags = [String]()
     var matchedErrands = [Errands]()
+    var allErrands = [Errands]()
+    var acceptedErrands = [Errands]()
+    var errandsByMe = [Errands]()
     
     var token:String!
     var is_new:Bool = false
@@ -308,9 +311,9 @@ class ServerManage {
     
  
     
-    //  -------------------------- for HomeFeed ---------------------------
+    //  -------------------------- for All Errands ---------------------------
     
-    func getMatchedErrands(callback:@escaping((_ state:ServerState) -> Void) ) {
+    func getAllErrands(callback:@escaping((_ state:ServerState) -> Void) ) {
         let json:[String:Any] = ["api_token":token!]
         let data = try? JSONSerialization.data(withJSONObject: json,options: .prettyPrinted)
         let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/getUnsubscribeJob")
@@ -320,7 +323,71 @@ class ServerManage {
         request.httpMethod = "POST"
         request.httpBody = data
         
-        self.notSubscribedTags.removeAll()
+        let task = URLSession.shared.dataTask(with: request){  data, response, error in
+            
+            guard error == nil else {
+                print(error!)
+                callback(ServerState.TimeOut)
+                return
+            }
+            
+            guard let data = data else{
+                print("Data is empty")
+                callback(ServerState.TimeOut)
+                return
+            }
+            let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
+            print("All Errands")
+           // print(jsonObject)
+            
+            if let json = jsonObject as? [String:Any] {
+                if let errand_data = json["data"] as? [Any] {
+                    for itemDict in errand_data {
+                       // print(itemDict)
+                        
+                        
+                        if let item = itemDict as? [String:Any]{
+                            
+                            let title = item["title"] as! String
+                            let details = item["details"] as! String
+                            let rewards = item["rewards"] as! String
+                            var nickname:String!
+                            
+                            if let publisher = item["publisher"] as? [String:Any]{
+                                if let nicknameTest = publisher["nickname"] as? String{
+                                    nickname = nicknameTest
+                                }
+                                else{
+                                    nickname = "No Name"
+                                }
+                            }
+          
+                            let errand_tags = item["tagName"] as? [String]
+                            
+                            let tempErrand = Errands(publisher: nickname, title: title, details: details, rewards: rewards, tags: errand_tags!)
+                            
+                            self.allErrands.append(tempErrand)
+                        }
+                    }
+                }
+                
+                if let status = json[ServerResponse.status.rawValue] as? String {
+                    callback(ServerState(rawValue: status)!)
+                }
+            }
+        }
+        task.resume()
+    }
+    // ----- mAtched -------
+    func getMatchedErrands(callback:@escaping((_ state:ServerState) -> Void) ) {
+        let json:[String:Any] = ["api_token":token!]
+        let data = try? JSONSerialization.data(withJSONObject: json,options: .prettyPrinted)
+        let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/getSubscribeJob")
+        var request = URLRequest(url: url!)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = data
         
         let task = URLSession.shared.dataTask(with: request){  data, response, error in
             
@@ -337,28 +404,108 @@ class ServerManage {
             }
             let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
             print("Matched Errands")
-            print(jsonObject)
             
             if let json = jsonObject as? [String:Any] {
-                
+                 print("Matched Errands1")
                 if let errand_data = json["data"] as? [Any] {
-                    print("\nMatched Errands  STUB\n")
-//                    if let errand_tag = errand_data["tagName"] as? [Any]{
-//                        print("Errand tag")
-//                        for item in errand_tag{
-//                            if let str = item as? String{
-//                                print(str)
-//                            }
-//                        }
-//                    }
-                    
-//                    for jsonDict in tag_data {
-//                        if let item = jsonDict as? [String:Any]{
-//                            if let tag_name = item["name"] as? String{
-//                                self.notSubscribedTags.append(tag_name)
-//                            }
-//                        }
-//                    }
+                     print("Matched Errands2")
+                    print(errand_data)
+                    print("Matched Errands = \(errand_data.count)")
+                    for itemDict in errand_data {
+                        
+                        
+                        
+                        print(itemDict)
+                        
+                        
+                        if let item = itemDict as? [String:Any]{
+                            
+                            let title = item["title"] as! String
+                            let details = item["details"] as! String
+                            let rewards = item["rewards"] as! String
+                            var nickname:String!
+                            
+                            if let publisher = item["publisher"] as? [String:Any]{
+                                if let nicknameTest = publisher["nickname"] as? String{
+                                    nickname = nicknameTest
+                                }
+                                else{
+                                    nickname = "No Name"
+                                }
+                            }
+                            
+                            let errand_tags = item["tagName"] as? [String]
+                            
+                            let tempErrand = Errands(publisher: nickname, title: title, details: details, rewards: rewards, tags: errand_tags!)
+                            
+                            self.matchedErrands.append(tempErrand)
+                        }
+                    }
+                }
+                
+                if let status = json[ServerResponse.status.rawValue] as? String {
+                    callback(ServerState(rawValue: status)!)
+                }
+            }
+        }
+        task.resume()
+    }
+    // -------------------------- Accepted Errands -------------------------------
+    func getAcceptedErrands(callback:@escaping((_ state:ServerState) -> Void) ) {
+        let json:[String:Any] = ["api_token":token!]
+        let data = try? JSONSerialization.data(withJSONObject: json,options: .prettyPrinted)
+        let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/getJobAccept")
+        var request = URLRequest(url: url!)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = data
+        
+        let task = URLSession.shared.dataTask(with: request){  data, response, error in
+            
+            guard error == nil else {
+                print(error!)
+                callback(ServerState.TimeOut)
+                return
+            }
+            
+            guard let data = data else{
+                print("Data is empty")
+                callback(ServerState.TimeOut)
+                return
+            }
+            let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
+            print("Accepted Errands")
+            
+            if let json = jsonObject as? [String:Any] {
+                if let errand_data = json["data"] as? [Any] {
+                    for itemDict in errand_data {
+                        print(itemDict)
+                        
+                        
+                        if let item = itemDict as? [String:Any]{
+                            
+                            let title = item["title"] as! String
+                            let details = item["details"] as! String
+                            let rewards = item["rewards"] as! String
+                            var nickname:String!
+                            
+                            if let publisher = item["publisher"] as? [String:Any]{
+                                if let nicknameTest = publisher["nickname"] as? String{
+                                    nickname = nicknameTest
+                                }
+                                else{
+                                    nickname = "No Name"
+                                }
+                            }
+                            
+                            let errand_tags = item["tagName"] as? [String]
+                            
+                            let tempErrand = Errands(publisher: nickname, title: title, details: details, rewards: rewards, tags: errand_tags!)
+                            
+                            self.acceptedErrands.append(tempErrand)
+                        }
+                    }
                 }
                 
                 if let status = json[ServerResponse.status.rawValue] as? String {
@@ -369,6 +516,71 @@ class ServerManage {
         task.resume()
     }
     
+    func getErrandsByMe(callback:@escaping((_ state:ServerState) -> Void) ) {
+        let json:[String:Any] = ["api_token":token!]
+        let data = try? JSONSerialization.data(withJSONObject: json,options: .prettyPrinted)
+        let url = URL(string: "http://selab2.ahkui.com:1000/api/Errandzon/getJobPublish")
+        var request = URLRequest(url: url!)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = data
+        
+        let task = URLSession.shared.dataTask(with: request){  data, response, error in
+            
+            guard error == nil else {
+                print(error!)
+                callback(ServerState.TimeOut)
+                return
+            }
+            
+            guard let data = data else{
+                print("Data is empty")
+                callback(ServerState.TimeOut)
+                return
+            }
+            let jsonObject = try! JSONSerialization.jsonObject(with: data, options: [])
+            print("My Errands")
+            
+            if let json = jsonObject as? [String:Any] {
+                if let errand_data = json["data"] as? [Any] {
+                    for itemDict in errand_data {
+                        print(itemDict)
+                        
+                        
+                        if let item = itemDict as? [String:Any]{
+                            
+                            let title = item["title"] as! String
+                            let details = item["details"] as! String
+                            let rewards = item["rewards"] as! String
+                            var nickname:String!
+                            
+                            if let publisher = item["publisher"] as? [String:Any]{
+                                if let nicknameTest = publisher["nickname"] as? String{
+                                    nickname = nicknameTest
+                                }
+                                else{
+                                    nickname = "No Name"
+                                }
+                            }
+                            
+                            let errand_tags = item["tagName"] as? [String]
+                            
+                            let tempErrand = Errands(publisher: nickname, title: title, details: details, rewards: rewards, tags: errand_tags!)
+                            
+                            self.errandsByMe.append(tempErrand)
+                        }
+                    }
+                }
+                
+                if let status = json[ServerResponse.status.rawValue] as? String {
+                    callback(ServerState(rawValue: status)!)
+                }
+            }
+        }
+        task.resume()
+    }
+
     
 }
 

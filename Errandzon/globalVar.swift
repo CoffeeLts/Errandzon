@@ -11,20 +11,20 @@ import UIKit
 
 
 
-var colors:[UIColor] = [UIColor(rgb: 0x1abc9c),
-                        UIColor(rgb: 0x16a085),
-                        UIColor(rgb: 0x2ecc71),
-                        UIColor(rgb: 0x27ae60),
-                        UIColor(rgb: 0x3498db),
-                        UIColor(rgb: 0x2980b9),
-                        UIColor(rgb: 0x9b59b6),
-                        UIColor(rgb: 0x8e44ad),
-                        UIColor(rgb: 0xe74c3c),
-                        UIColor(rgb: 0xc0392b),
-                        UIColor(rgb: 0xe67e22),
-                        UIColor(rgb: 0xd35400),
-                        UIColor(rgb: 0xf1c40f),
-                        UIColor(rgb: 0xf39c12)]
+var colors:[UIColor] = [UIColor(rgb: 0x1abc9c,alphaLevel: 0.7),
+                        UIColor(rgb: 0x16a085,alphaLevel: 0.7),
+                        UIColor(rgb: 0x2ecc71,alphaLevel: 0.7),
+                        UIColor(rgb: 0x27ae60,alphaLevel: 0.7),
+                        UIColor(rgb: 0x3498db,alphaLevel: 0.7),
+                        UIColor(rgb: 0x2980b9,alphaLevel: 0.7),
+                        UIColor(rgb: 0x9b59b6,alphaLevel: 0.7),
+                        UIColor(rgb: 0x8e44ad,alphaLevel: 0.7),
+                        UIColor(rgb: 0xe74c3c,alphaLevel: 0.7),
+                        UIColor(rgb: 0xc0392b,alphaLevel: 0.7),
+                        UIColor(rgb: 0xe67e22,alphaLevel: 0.7),
+                        UIColor(rgb: 0xd35400,alphaLevel: 0.7),
+                        UIColor(rgb: 0xf1c40f,alphaLevel: 0.7),
+                        UIColor(rgb: 0xf39c12,alphaLevel: 0.7)]
 
 
 var errands:[Errands] = [

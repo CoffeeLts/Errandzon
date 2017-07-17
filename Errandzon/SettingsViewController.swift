@@ -13,16 +13,10 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
     var Server:ServerManage!
 
     @IBAction func unwindToSettings(segue:UIStoryboardSegue) {
+        DispatchQueue.main.async {
+            self.Server.getSubscribedTags(callback: self.asdasd)
+        }
         
-        self.Server.getSubscribedTags(callback: asdasd)
-        
-        
-        
-        //self.Server.getNotSubscribedTags(callback: {_ in})
-//
-//        self.localSubscribedTags = Server.subscribedTags
-//        DispatchQueue.main.async {
-//                    }
         
     }
     
@@ -157,8 +151,8 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
  
         for item in selectedTags{
             if let index = Server.subscribedTags.index(of: item) {
-                print("\(localSubscribedTags[index]) deleted!")
-                localSubscribedTags.remove(at: index)
+                print("\(Server.subscribedTags[index]) deleted!")
+             //   localSubscribedTags.remove(at: index)
                 
             }
         }
@@ -190,6 +184,7 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         }
     }
     
+    // Select
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! TagBoxCell
         if(editEnabled == true){

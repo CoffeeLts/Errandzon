@@ -54,6 +54,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate,  UI
         cell.menuBarLabel.text = menuItems[indexPath.item]
        
         cell.tintColor = UIColor(rgb: 0x286C5F)
+        cell.alpha = 1
         return cell
     }
     

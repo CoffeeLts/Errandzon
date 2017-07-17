@@ -9,8 +9,10 @@
 import UIKit
 
 class JobListTableViewController: UITableViewController {
+    var Server:ServerManage!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+    var local_errands = [Errands]()
+
     
     @IBAction func unwindToHomeScreen3(segue:UIStoryboardSegue) {
     }
@@ -19,7 +21,7 @@ class JobListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
       //  let myPostList = appDelegate.myPostList
-        return myPostList.count
+        return local_errands.count
     }
     
     
@@ -33,10 +35,10 @@ class JobListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! JobListTableViewCell
         // Configure the cell...
         
-        cell.publisher.text = myPostList[indexPath.row].publisher
-        cell.title.text = myPostList[indexPath.row].title
-        cell.details.text = myPostList[indexPath.row].details
-        cell.rewards.text = myPostList[indexPath.row].rewards
+        cell.publisher.text = local_errands[indexPath.row].publisher
+        cell.title.text = local_errands[indexPath.row].title
+        cell.details.text = local_errands[indexPath.row].details
+        cell.rewards.text = local_errands[indexPath.row].rewards
         return cell
         
     }
@@ -50,6 +52,10 @@ class JobListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        Server = appDelegate.Server
+        local_errands = Server.errandsByMe
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,7 +67,7 @@ class JobListTableViewController: UITableViewController {
         if segue.identifier == "showJoblistDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! JobListDetailTableViewController
-                destinationController.errands = myPostList[indexPath.row]
+                destinationController.errands = local_errands[indexPath.row]
             }
         }
     }

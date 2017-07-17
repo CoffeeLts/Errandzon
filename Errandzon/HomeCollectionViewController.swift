@@ -11,17 +11,23 @@ import UIKit
 
 class HomeCollectionViewController: UICollectionViewController {
     
-    let menuBar: MenuBar = {
-        let mb  = MenuBar()
-        return mb
-    }()
+//    let menuBar: MenuBar = {
+//        let mb  = MenuBar()
+//        return mb
+//    }()
     
-    
+    var Server:ServerManage!
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var local_errands = [Errands]()
+
     
     var cellScaling:CGFloat = 0.9
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Errandzon"
+        
+        Server = appDelegate.Server
+        local_errands = Server.matchedErrands
         
         setupCollectionView()
         
@@ -52,14 +58,14 @@ class HomeCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
    
-    private func setupMenuBar(){
+//    private func setupMenuBar(){
 //        navigationController?.hidesBarsOnSwipe = true
-        
-        view.addSubview(menuBar)
-        view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
-        view.addConstraintsWithFormat("V:|[v0(50)]", views: menuBar)
-          
-    }
+//        
+//        view.addSubview(menuBar)
+//        view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
+//        view.addConstraintsWithFormat("V:|[v0(50)]", views: menuBar)
+//          
+//    }
 
 
     // MARK: UICollectionViewDataSource
@@ -72,7 +78,8 @@ class HomeCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return errands.count
+        print("local_errands : \(local_errands.count)")
+        return local_errands.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -80,13 +87,10 @@ class HomeCollectionViewController: UICollectionViewController {
       
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MFCell", for: indexPath) as! MatchedFeedCell
         
-        
-        
-        
-        print(errands[indexPath.item].publisher)
-        cell.publisherLabel.text = errands[indexPath.row].publisher
-        cell.titleLabel.text = errands[indexPath.row].title
-        cell.rewardsTextView.text = errands[indexPath.row].rewards
+        print(local_errands[indexPath.item].publisher)
+        cell.publisherLabel.text = local_errands[indexPath.row].publisher
+        cell.titleLabel.text = local_errands[indexPath.row].title
+        cell.rewardsTextView.text = local_errands[indexPath.row].rewards
     
         // Configure the cell
      
@@ -122,7 +126,7 @@ class HomeCollectionViewController: UICollectionViewController {
       
             let errandDetails = segue.destination as! HomePageDetailViewController
             
-            errandDetails.local_errands = errands[row]
+            errandDetails.local_errands = self.local_errands[row]
         }
     }
     

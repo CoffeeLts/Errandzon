@@ -165,11 +165,11 @@
 				2ACC2CC81F0EE2B100A50193 /* AcceptedDetailTableViewController.swift */,
 				572B0AA31F02083900FDCB4A /* HomePageDetailViewController.swift */,
 				17CB15861EFBD6FA00C4128D /* SettingTableViewController.swift */,
-				21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */,
 				21272DC41F060FAB005A5980 /* AnimationCollectionViewController.swift */,
 				170D9CB41EFBA0EB00A4E7A0 /* MenuBar.swift */,
 				21F9DBBF1F12D87E003B6922 /* SettingsViewController.swift */,
 				21F9DBB91F129C34003B6922 /* HomePageViewController.swift */,
+				21D192871F029D3800F61D57 /* HomeCollectionViewController.swift */,
 				21F9DBBD1F12C8DB003B6922 /* AllFeedTableViewController.swift */,
 				2147A0D21F13752E003096CF /* ChatRoom.swift */,
 				2147A0D41F137630003096CF /* AcceptPage.swift */,
@@ -186,8 +186,8 @@
 			children = (
 				21222B8C1F0E36860068A59E /* User.swift */,
 				57E9DC571F0B717600D63DFC /* JobList.swift */,
-				170D9CB61EFBAE4300A4E7A0 /* Errands.swift */,
 				21464EDB1F02A49C00C4FD7A /* globalVar.swift */,
+				170D9CB61EFBAE4300A4E7A0 /* Errands.swift */,
 				42A0FDDC1F137A0C00D6D41D /* Server.swift */,
 			);
 			name = Models;

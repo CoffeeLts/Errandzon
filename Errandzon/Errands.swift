@@ -18,6 +18,14 @@ class Errands {
     var tags = [String]()
    
     
+    init(publisher:String, title:String, details: String, rewards:String, tags: [String]){
+        self.publisher = publisher
+        self.title = title
+        self.details = details
+        self.rewards = rewards
+        self.tags = tags
+    }
+    
     init(publisher:String, title:String, details: String, rewards:String, publishTime:String, tags: [String]){
         self.publisher = publisher
         self.title = title

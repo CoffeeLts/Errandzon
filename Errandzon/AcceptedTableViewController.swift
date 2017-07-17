@@ -9,12 +9,14 @@
 import UIKit
 
 class AcceptedTableViewController: UITableViewController {
+    var Server:ServerManage!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+    var local_errands = [Errands]()
+
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return myAcceptErrands.count
+        return local_errands.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     //    let myAcceptErrands = appDelegate.myAcceptErrands
@@ -24,10 +26,10 @@ class AcceptedTableViewController: UITableViewController {
         // Configure the cell...
         //cell.AcceptedtitleLabel.text = AcceptedJobTitles[indexPath.row]
         
-        cell.publisher.text = myAcceptErrands[indexPath.row].publisher
-        cell.title.text = myAcceptErrands[indexPath.row].title
-        cell.details.text = myAcceptErrands[indexPath.row].details
-        cell.rewards.text = myAcceptErrands[indexPath.row].rewards
+        cell.publisher.text = local_errands[indexPath.row].publisher
+        cell.title.text = local_errands[indexPath.row].title
+        cell.details.text = local_errands[indexPath.row].details
+        cell.rewards.text = local_errands[indexPath.row].rewards
         
         return cell
     }
@@ -40,11 +42,9 @@ class AcceptedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        Server = appDelegate.Server
+        local_errands = Server.acceptedErrands
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,7 +57,7 @@ class AcceptedTableViewController: UITableViewController {
         if segue.identifier == "showAcceptedPostDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! AcceptedDetailTableViewController
-                destinationController.errands = myAcceptErrands[indexPath.row]
+                destinationController.errands = local_errands[indexPath.row]
             } }
     }
   
