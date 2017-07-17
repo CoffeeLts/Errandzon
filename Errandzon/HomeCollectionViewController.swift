@@ -91,6 +91,19 @@ class HomeCollectionViewController: UICollectionViewController {
         cell.publisherLabel.text = local_errands[indexPath.row].publisher
         cell.titleLabel.text = local_errands[indexPath.row].title
         cell.rewardsTextView.text = local_errands[indexPath.row].rewards
+        cell.tagsLabel.text = ""
+        let total_count = local_errands[indexPath.row].tags.count
+        var count = 0
+        for tags in local_errands[indexPath.row].tags{
+            
+            cell.tagsLabel.text?.append(tags)
+            if(count + 1 != total_count){
+                 cell.tagsLabel.text?.append(", ")
+            }
+            
+            count = count + 1
+           
+        }
     
         // Configure the cell
      

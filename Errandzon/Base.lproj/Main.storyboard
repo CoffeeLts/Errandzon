@@ -90,7 +90,7 @@
         <scene sceneID="RnR-V2-SkV">
             <objects>
                 <collectionViewController id="gcS-Su-HuS" customClass="HomeCollectionViewController" customModule="Errandzon" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6iZ-z3-W5r">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="6iZ-z3-W5r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -115,10 +115,16 @@
                                             </constraints>
                                         </imageView>
                                         <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygu-Py-DaX">
-                                            <rect key="frame" x="0.0" y="0.0" width="299" height="537"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="299" height="412"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dao-ek-aIf">
+                                                    <rect key="frame" x="16" y="178" width="267" height="39"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya0-VM-xj5">
-                                                    <rect key="frame" x="16" y="200" width="267" height="21"/>
+                                                    <rect key="frame" x="16" y="229.5" width="267" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="rMQ-Fj-Bgh"/>
                                                     </constraints>
@@ -127,7 +133,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="f2v-wa-XD7">
-                                                    <rect key="frame" x="100" y="229" width="99" height="35"/>
+                                                    <rect key="frame" x="100" y="258.5" width="99" height="35"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money_bag" translatesAutoresizingMaskIntoConstraints="NO" id="v6f-d4-jZT">
                                                             <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -145,42 +151,46 @@
                                                     </subviews>
                                                 </stackView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="rewards details" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fmm-Xf-BK8">
-                                                    <rect key="frame" x="40" y="269" width="219" height="33.5"/>
+                                                    <rect key="frame" x="40" y="298.5" width="219" height="33.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dao-ek-aIf">
-                                                    <rect key="frame" x="16" y="112" width="267" height="80"/>
-                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="f2v-wa-XD7" firstAttribute="top" secondItem="ya0-VM-xj5" secondAttribute="bottom" constant="8" id="227-00-59v"/>
+                                                <constraint firstItem="Dao-ek-aIf" firstAttribute="centerX" secondItem="ygu-Py-DaX" secondAttribute="centerX" id="8fD-0M-YOV"/>
                                                 <constraint firstAttribute="trailing" secondItem="Dao-ek-aIf" secondAttribute="trailing" constant="16" id="8u2-yW-1Ko"/>
                                                 <constraint firstItem="ya0-VM-xj5" firstAttribute="centerX" secondItem="ygu-Py-DaX" secondAttribute="centerX" id="9nc-GI-XIX"/>
                                                 <constraint firstItem="fmm-Xf-BK8" firstAttribute="centerX" secondItem="ygu-Py-DaX" secondAttribute="centerX" id="BVh-eu-uBJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="fmm-Xf-BK8" secondAttribute="bottom" constant="72" id="CTS-Lg-Z0m"/>
                                                 <constraint firstItem="fmm-Xf-BK8" firstAttribute="leading" secondItem="ygu-Py-DaX" secondAttribute="leading" constant="40" id="JKh-eY-Uta"/>
-                                                <constraint firstItem="Dao-ek-aIf" firstAttribute="top" secondItem="ygu-Py-DaX" secondAttribute="top" constant="112" id="LRl-YK-aOf"/>
-                                                <constraint firstItem="ya0-VM-xj5" firstAttribute="top" secondItem="Dao-ek-aIf" secondAttribute="bottom" constant="8" id="VqW-LD-A2z"/>
+                                                <constraint firstItem="ya0-VM-xj5" firstAttribute="top" secondItem="Dao-ek-aIf" secondAttribute="bottom" constant="12" id="Uzy-FF-0bG"/>
                                                 <constraint firstItem="Dao-ek-aIf" firstAttribute="leading" secondItem="ygu-Py-DaX" secondAttribute="leading" constant="16" id="WiA-D2-EtL"/>
                                                 <constraint firstItem="f2v-wa-XD7" firstAttribute="centerX" secondItem="ygu-Py-DaX" secondAttribute="centerX" id="cnQ-p9-yyk"/>
                                                 <constraint firstItem="fmm-Xf-BK8" firstAttribute="top" secondItem="f2v-wa-XD7" secondAttribute="bottom" constant="5" id="e6I-IE-SCs"/>
                                                 <constraint firstAttribute="trailing" secondItem="ya0-VM-xj5" secondAttribute="trailing" constant="16" id="nBe-4v-czI"/>
                                                 <constraint firstAttribute="trailing" secondItem="fmm-Xf-BK8" secondAttribute="trailing" constant="40" id="nbA-yr-Phd"/>
                                                 <constraint firstItem="ya0-VM-xj5" firstAttribute="leading" secondItem="ygu-Py-DaX" secondAttribute="leading" constant="16" id="t0j-Ju-lRI"/>
-                                                <constraint firstItem="ya0-VM-xj5" firstAttribute="top" secondItem="ygu-Py-DaX" secondAttribute="top" constant="200" id="vfz-j3-j63"/>
                                             </constraints>
                                         </view>
                                         <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyF-RH-bEe">
                                             <rect key="frame" x="0.0" y="412" width="299" height="125"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDX-Bv-spb">
+                                                    <rect key="frame" x="133.5" y="52" width="32.5" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                                    <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="kDX-Bv-spb" firstAttribute="centerX" secondItem="yyF-RH-bEe" secondAttribute="centerX" id="0vh-NK-2u2"/>
                                                 <constraint firstAttribute="height" constant="125" id="BH9-DU-79H"/>
+                                                <constraint firstItem="kDX-Bv-spb" firstAttribute="centerY" secondItem="yyF-RH-bEe" secondAttribute="centerY" id="gGg-ja-s2K"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAo-Lu-Ole">
@@ -196,7 +206,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="yyF-RH-bEe" secondAttribute="trailing" id="Dul-ew-eLw"/>
                                     <constraint firstAttribute="bottom" secondItem="yyF-RH-bEe" secondAttribute="bottom" id="L0b-y7-8pE"/>
-                                    <constraint firstAttribute="bottom" secondItem="ygu-Py-DaX" secondAttribute="bottom" id="LFs-y5-Bey"/>
+                                    <constraint firstAttribute="bottom" secondItem="ygu-Py-DaX" secondAttribute="bottom" constant="125" id="LFs-y5-Bey"/>
                                     <constraint firstAttribute="bottom" secondItem="EAC-CP-Xv7" secondAttribute="bottom" id="P3e-GQ-v4f"/>
                                     <constraint firstItem="sAo-Lu-Ole" firstAttribute="centerX" secondItem="AOX-jr-Px8" secondAttribute="centerX" id="Yjp-Ni-euZ"/>
                                     <constraint firstItem="yyF-RH-bEe" firstAttribute="leading" secondItem="AOX-jr-Px8" secondAttribute="leading" id="bpp-Kv-GD0"/>
@@ -210,6 +220,7 @@
                                 <connections>
                                     <outlet property="publisherLabel" destination="ya0-VM-xj5" id="IEm-4m-wlr"/>
                                     <outlet property="rewardsTextView" destination="fmm-Xf-BK8" id="Asd-8S-BCv"/>
+                                    <outlet property="tagsLabel" destination="kDX-Bv-spb" id="iMH-gW-IBd"/>
                                     <outlet property="titleLabel" destination="Dao-ek-aIf" id="Gb4-jY-WPt"/>
                                 </connections>
                             </collectionViewCell>
@@ -225,7 +236,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qca-Oh-Hlw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3089" y="-1224"/>
+            <point key="canvasLocation" x="3088.8000000000002" y="-1224.2878560719641"/>
         </scene>
         <!--Animation Collection View Controller-->
         <scene sceneID="Qv0-lu-hXg">
@@ -279,7 +290,7 @@
         <scene sceneID="b2t-F3-qD8">
             <objects>
                 <collectionViewController id="YLc-n5-YJg" userLabel="Tags" customClass="TagsCollectionViewController" customModule="Errandzon" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="6t6-Rn-Y9o">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6t6-Rn-Y9o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1866,9 +1877,9 @@
         <image name="wooden_texture" width="850" height="850"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RjG-gT-pTR"/>
         <segue reference="a0n-dp-rj9"/>
-        <segue reference="mgU-7E-FcV"/>
+        <segue reference="RjG-gT-pTR"/>
+        <segue reference="IyR-40-Saz"/>
         <segue reference="VVC-at-KMJ"/>
     </inferredMetricsTieBreakers>
 </document>

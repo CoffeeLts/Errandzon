@@ -62,7 +62,7 @@ class AddPostTableViewController: UITableViewController {
         let confirmationButton = (Any).self
         
         let postTitle = postTitleTextField.text
-      //  let validTime = validTimeTextField.text
+
         var rewards = postRewardTextField.text
         let details = postDetailsTextField.text
         

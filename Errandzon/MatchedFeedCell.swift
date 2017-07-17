@@ -13,6 +13,7 @@ class MatchedFeedCell: UICollectionViewCell {
     @IBOutlet var publisherLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var rewardsTextView: UITextView!
+    @IBOutlet var tagsLabel: UILabel!
     
 //    lazy var publisherLabel: UILabel = {
 //        let publisher = UILabel()
