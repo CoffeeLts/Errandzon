@@ -7,11 +7,25 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+
 
 class SettingsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout  {
     
     var Server:ServerManage!
+    
 
+    
+    @IBAction func facebookLogOut(_ sender: UIButton) {
+        let confirmationButton = (Any).self
+        FBSDKLoginManager().logOut()
+        print("you are loggin out")
+        print(FBSDKAccessToken.current())
+        showAlertButton(confirmationButton)
+        
+    }
+    
+    
     @IBAction func unwindToSettings(segue:UIStoryboardSegue) {
         DispatchQueue.main.async {
             self.Server.getSubscribedTags(callback: self.asdasd)
@@ -47,11 +61,18 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         super.didReceiveMemoryWarning()
     }
     
+    
 
+    
+    
     func setupCollectionView(){
         //collectionView?.backgroundColor = UIColor.black
         //let screenSize = UIScreen.main.bounds.size
         tagsBox.register(TagBoxCell.self, forCellWithReuseIdentifier: "tagCell")
+        
+        tagsBox.layer.borderWidth = 1
+        tagsBox.layer.borderColor = UIColor.white.cgColor
+        
 //        let cellWidth = floor(view.bounds.width * cellScaling)
 //        let cellHeight = floor((view.bounds.height) * 0.8)
         
@@ -167,7 +188,23 @@ class SettingsViewController: UIViewController, UICollectionViewDataSource, UICo
         
     }
     
+    func showAlertButton(_ sender: Any) {
+        
+        // create the alert
+        let alert = UIAlertController(title: "Log out", message: "If you want to change the other \n USER ACCOUNT \n You can enter the new facebook account later \n OR ... If you want to log out \n then BYE BYE ", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "LOG OUT", style: UIAlertActionStyle.destructive, handler: relogin))
+        
+        alert.addAction(UIAlertAction(title: "CANCEL", style: UIAlertActionStyle.default, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
     
+    func relogin(alert: UIAlertAction!) {
+        self.performSegue(withIdentifier: "relogin", sender: self)
+    }
     
     func removeFromView(_a:ServerState) {
         

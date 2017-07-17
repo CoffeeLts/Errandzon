@@ -13,7 +13,6 @@ class AddPostTableViewController: UITableViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet var postTitleTextField: UITextField!
-    @IBOutlet var validTimeTextField: UITextField!
     @IBOutlet var postRewardTextField: UITextField!
     @IBOutlet var postDetailsTextField: UITextField!
     
@@ -25,7 +24,6 @@ class AddPostTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.textViewSetting(textField: postTitleTextField)
-        self.textViewSetting(textField: validTimeTextField)
         self.textViewSetting(textField: postRewardTextField)
         self.textViewSetting(textField: postDetailsTextField)
         
@@ -64,12 +62,12 @@ class AddPostTableViewController: UITableViewController {
         let confirmationButton = (Any).self
         
         let postTitle = postTitleTextField.text
-        let validTime = validTimeTextField.text
+      //  let validTime = validTimeTextField.text
         var rewards = postRewardTextField.text
         let details = postDetailsTextField.text
         
         
-        if postTitle == "" || validTime == "" || details == ""{
+        if postTitle == "" || details == ""{
             let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that fields with '*' are required.", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
