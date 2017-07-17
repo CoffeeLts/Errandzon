@@ -1691,6 +1691,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nightTheme" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-by-Q2s">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JWW-1B-ecy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="bNz-Ao-oVJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ｎickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLB-bO-qxy">
                                 <rect key="frame" x="48" y="217" width="137" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1715,8 +1727,21 @@
                                     <action selector="nextButton" destination="474-kP-gga" eventType="touchUpInside" id="V4m-OX-Vxc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZt-nv-zcX">
+                                <rect key="frame" x="167" y="509" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bTg-by-Q2s" firstAttribute="leading" secondItem="m8G-X6-51e" secondAttribute="leading" id="61k-4S-EFI"/>
+                            <constraint firstItem="bTg-by-Q2s" firstAttribute="top" secondItem="m8G-X6-51e" secondAttribute="top" id="Bcc-Z5-B6k"/>
+                            <constraint firstAttribute="trailing" secondItem="bTg-by-Q2s" secondAttribute="trailing" id="c3r-qn-Gsa"/>
+                            <constraint firstItem="WBu-gA-AS5" firstAttribute="top" secondItem="bTg-by-Q2s" secondAttribute="bottom" id="dro-e5-ZFt"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="textField" destination="5G2-nx-i28" id="Kqy-9k-wxd"/>
@@ -1725,7 +1750,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvU-47-7GJ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="1639"/>
+            <point key="canvasLocation" x="1176.8" y="1638.5307346326838"/>
         </scene>
         <!--Facebook-->
         <scene sceneID="olf-tj-foE">
@@ -1739,10 +1764,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nightTheme" translatesAutoresizingMaskIntoConstraints="NO" id="bxl-pB-4AX" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfS-t7-4rY" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="20" y="300" width="335" height="67"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1751,6 +1772,10 @@
                                     <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nightTheme" translatesAutoresizingMaskIntoConstraints="NO" id="bxl-pB-4AX" userLabel="Background Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1891,8 +1916,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RjG-gT-pTR"/>
+        <segue reference="gAp-1W-UY6"/>
         <segue reference="IyR-40-Saz"/>
         <segue reference="VVC-at-KMJ"/>
-        <segue reference="bzi-ZI-7ST"/>
     </inferredMetricsTieBreakers>
 </document>
